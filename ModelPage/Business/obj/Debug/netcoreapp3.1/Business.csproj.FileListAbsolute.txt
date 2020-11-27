@@ -1,0 +1,17 @@
+D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\DataAccess.exe
+D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\Business.deps.json
+D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\Business.dll
+D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\Business.pdb
+D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\DataAccess.dll
+D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\DTO.dll
+D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\Entities.dll
+D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\DTO.pdb
+D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\DataAccess.pdb
+D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\modelpage-project-main\ModelPage\Business\obj\Debug\netcoreapp3.1\Business.csprojAssemblyReference.cache
+D:\modelpage-project-main\ModelPage\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+D:\modelpage-project-main\ModelPage\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfo.cs
+D:\modelpage-project-main\ModelPage\Business\obj\Debug\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
+D:\modelpage-project-main\ModelPage\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
+D:\modelpage-project-main\ModelPage\Business\obj\Debug\netcoreapp3.1\Business.dll
+D:\modelpage-project-main\ModelPage\Business\obj\Debug\netcoreapp3.1\Business.pdb

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Image Component Should render correct with no props 1`] = `<img />`;
+
+exports[`Test Image Component Should render correct with props - Default Case 1`] = `
+<img
+  alt="Car"
+  height="200"
+  src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"
+  width="200"
+/>
+`;

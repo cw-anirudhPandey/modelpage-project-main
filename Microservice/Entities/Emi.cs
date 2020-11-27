@@ -1,0 +1,13 @@
+using System;
+
+namespace Microservice.Entities
+{
+  [Serializable]
+  public class Emi 
+  {
+    public int Id { get; set; }
+    public int ModelId { get; set; }
+    public string Cost { get; set; }
+    public string Duration { get; set; }
+  }
+}

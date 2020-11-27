@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AEPLCore.Utils</id>
+    <version>3.2.0</version>
+    <authors>AEPLCore.Utils</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Added Custom port in SFTP</description>
+    <releaseNotes>--------------------
+    3.2.0
+    Added compression utility methods.
+    --------------------
+    3.1.1
+    Added ReCaptchaValidator to fetch reCaptcha score.
+    --------------------
+    3.1.0
+    ---------------------
+    Breaking Change : LocationFinder.GetAddressByLatLong signature changed to
+    accept googlemapsapikey as parameter
+
+    3.0.0
+    --------------------
+    Add support for .net core 3.1
+    Removed support for .net core 2.1/2.0
+    2.1.1
+    --------------------
+    Bug fix random generator
+    --------------------
+    2.1.0
+    --------------------
+    Added Random generator -Do not use this version
+    --------------------
+    2.0.1
+    --------------------
+    Added custom port in SFTP
+    ----------------------
+    2.0.0
+    -------------------
+    Breaking change: Update grpc and google.protobuf to 2.28 and 3.12.3 resp.
+    Also regenerate your proto classes
+
+  ----------
+      1.0.15
+      ----------------
+      Added FTP helper to access files from ftp server
+      1.0.14 / 1.0.14.1
+      ---------
+      Addded deep comparer to compare 2 objects.
+    ----------
+	  ---------
+      1.0.13.1
+      ---------
+      Addded extention methods to check IsNotNullOrEmpty and IsNullOrEmpty on generic list
+    ----------
+      1.0.13
+      ---------
+      Added formatted address from google maps api
+     ----------
+      1.0.12
+      ---------
+      Added build url method and get list from string method
+      ----------
+      1.0.11
+      ---------
+      Added Url shortner using firebase api
+      ----------
+      1.0.10
+      ----------
+      Correct the email validation single character email was failing, can accept email like r@gmail.com.
+      bug fix for https://github.com/carwale/synapse/issues/41
+      ----------
+      1.0.9
+      ----------
+      Correct the email validation to removing the max limit for domain, can accept email like example@hyundai.industries.
+      bug fix for https://github.com/carwale/synapse/issues/37
+      ----------</releaseNotes>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.1">
+        <dependency id="FluentFTP" version="32.4.1" exclude="Build,Analyzers" />
+        <dependency id="Google.Protobuf" version="3.12.3" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+        <dependency id="SSH.NET" version="2016.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.5.2">
+        <dependency id="FluentFTP" version="32.4.1" exclude="Build,Analyzers" />
+        <dependency id="Google.Protobuf" version="3.12.3" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+        <dependency id="SSH.NET" version="2016.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="FluentFTP" version="32.4.1" exclude="Build,Analyzers" />
+        <dependency id="Google.Protobuf" version="3.12.3" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+        <dependency id="SSH.NET" version="2016.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Configuration.ConfigurationManager" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.5.1, .NETFramework4.5.2" />
+      <frameworkAssembly assemblyName="System.Web" targetFramework=".NETFramework4.5.1, .NETFramework4.5.2" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

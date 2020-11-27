@@ -1,0 +1,9 @@
+D:\modelpage-project-main\ModelPage\DTO\bin\Debug\netcoreapp3.1\DTO.deps.json
+D:\modelpage-project-main\ModelPage\DTO\bin\Debug\netcoreapp3.1\DTO.dll
+D:\modelpage-project-main\ModelPage\DTO\bin\Debug\netcoreapp3.1\DTO.pdb
+D:\modelpage-project-main\ModelPage\DTO\obj\Debug\netcoreapp3.1\DTO.csprojAssemblyReference.cache
+D:\modelpage-project-main\ModelPage\DTO\obj\Debug\netcoreapp3.1\DTO.AssemblyInfoInputs.cache
+D:\modelpage-project-main\ModelPage\DTO\obj\Debug\netcoreapp3.1\DTO.AssemblyInfo.cs
+D:\modelpage-project-main\ModelPage\DTO\obj\Debug\netcoreapp3.1\DTO.csproj.CoreCompileInputs.cache
+D:\modelpage-project-main\ModelPage\DTO\obj\Debug\netcoreapp3.1\DTO.dll
+D:\modelpage-project-main\ModelPage\DTO\obj\Debug\netcoreapp3.1\DTO.pdb

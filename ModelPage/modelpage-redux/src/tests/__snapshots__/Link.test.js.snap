@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Link Component Should render correct with all the props - Default case 1`] = `
+<span
+  className="link"
+>
+  <Image
+    alt="Colors"
+    height={15}
+    url="https://cdn.zeplin.io/5f489c7913d2623062e791d1/assets/4E6F07CF-813B-4F3C-8798-0283BD8E9B04.svg"
+    width={15}
+  />
+  <a
+    className="link-title"
+    href="colors"
+  >
+    Colors
+  </a>
+</span>
+`;
+
+exports[`Test Link Component Should render correct with no props 1`] = `""`;

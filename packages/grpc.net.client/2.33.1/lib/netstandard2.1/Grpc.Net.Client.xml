@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Grpc.Net.Client</name>
+    </assembly>
+    <members>
+        <member name="T:Grpc.Net.Client.GrpcChannel">
+            <summary>
+            Represents a gRPC channel. Channels are an abstraction of long-lived connections to remote servers.
+            Client objects can reuse the same channel. Creating a channel is an expensive operation compared to invoking
+            a remote call so in general you should reuse a single channel for as many calls as possible.
+            </summary>
+        </member>
+        <member name="M:Grpc.Net.Client.GrpcChannel.CreateCallInvoker">
+            <summary>
+            Create a new <see cref="T:Grpc.Core.CallInvoker"/> for the channel.
+            </summary>
+            <returns>A new <see cref="T:Grpc.Core.CallInvoker"/>.</returns>
+        </member>
+        <member name="M:Grpc.Net.Client.GrpcChannel.ForAddress(System.String)">
+            <summary>
+            Creates a <see cref="T:Grpc.Net.Client.GrpcChannel"/> for the specified address.
+            </summary>
+            <param name="address">The address the channel will use.</param>
+            <returns>A new instance of <see cref="T:Grpc.Net.Client.GrpcChannel"/>.</returns>
+        </member>
+        <member name="M:Grpc.Net.Client.GrpcChannel.ForAddress(System.String,Grpc.Net.Client.GrpcChannelOptions)">
+            <summary>
+            Creates a <see cref="T:Grpc.Net.Client.GrpcChannel"/> for the specified address and configuration options.
+            </summary>
+            <param name="address">The address the channel will use.</param>
+            <param name="channelOptions">The channel configuration options.</param>
+            <returns>A new instance of <see cref="T:Grpc.Net.Client.GrpcChannel"/>.</returns>
+        </member>
+        <member name="M:Grpc.Net.Client.GrpcChannel.ForAddress(System.Uri)">
+            <summary>
+            Creates a <see cref="T:Grpc.Net.Client.GrpcChannel"/> for the specified address.
+            </summary>
+            <param name="address">The address the channel will use.</param>
+            <returns>A new instance of <see cref="T:Grpc.Net.Client.GrpcChannel"/>.</returns>
+        </member>
+        <member name="M:Grpc.Net.Client.GrpcChannel.ForAddress(System.Uri,Grpc.Net.Client.GrpcChannelOptions)">
+            <summary>
+            Creates a <see cref="T:Grpc.Net.Client.GrpcChannel"/> for the specified address and configuration options.
+            </summary>
+            <param name="address">The address the channel will use.</param>
+            <param name="channelOptions">The channel configuration options.</param>
+            <returns>A new instance of <see cref="T:Grpc.Net.Client.GrpcChannel"/>.</returns>
+        </member>
+        <member name="M:Grpc.Net.Client.GrpcChannel.Dispose">
+            <summary>
+            Releases the resources used by the <see cref="T:Grpc.Net.Client.GrpcChannel"/> class.
+            Clients created with the channel can't be used after the channel is disposed.
+            </summary>
+        </member>
+        <member name="T:Grpc.Net.Client.GrpcChannelOptions">
+            <summary>
+            An options class for configuring a <see cref="T:Grpc.Net.Client.GrpcChannel"/>.
+            </summary>
+        </member>
+        <member name="P:Grpc.Net.Client.GrpcChannelOptions.Credentials">
+            <summary>
+            Gets or sets the credentials for the channel. This setting is used to set <see cref="T:Grpc.Core.CallCredentials"/> for
+            a channel. Connection transport layer security (TLS) is determined by the address used to create the channel.
+            </summary>
+            <remarks>
+            <para>
+            The channel credentials you use must match the address TLS setting. Use <see cref="P:Grpc.Core.ChannelCredentials.Insecure"/>
+            for an "http" address and <see cref="T:Grpc.Core.SslCredentials"/> with no arguments for "https".
+            </para>
+            <para>
+            The underlying <see cref="T:System.Net.Http.HttpClient"/> used by the channel automatically loads root certificates
+            from the operating system certificate store.
+            Client certificates should be configured on HttpClient. See https://aka.ms/AA6we64 for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Grpc.Net.Client.GrpcChannelOptions.MaxSendMessageSize">
+            <summary>
+            Gets or sets the maximum message size in bytes that can be sent from the client. Attempting to send a message
+            that exceeds the configured maximum message size results in an exception.
+            <para>
+            A <c>null</c> value removes the maximum message size limit. Defaults to <c>null</c>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Grpc.Net.Client.GrpcChannelOptions.MaxReceiveMessageSize">
+            <summary>
+            Gets or sets the maximum message size in bytes that can be received by the client. If the client receives a
+            message that exceeds this limit, it throws an exception.
+            <para>
+            A <c>null</c> value removes the maximum message size limit. Defaults to 4,194,304 (4 MB).
+            </para>
+            </summary>
+        </member>
+        <member name="P:Grpc.Net.Client.GrpcChannelOptions.CompressionProviders">
+            <summary>
+            Gets or sets a collection of compression providers.
+            </summary>
+        </member>
+        <member name="P:Grpc.Net.Client.GrpcChannelOptions.LoggerFactory">
+            <summary>
+            Gets or sets the logger factory used by the channel.
+            </summary>
+        </member>
+        <member name="P:Grpc.Net.Client.GrpcChannelOptions.HttpClient">
+            <summary>
+            Gets or sets the <see cref="T:System.Net.Http.HttpClient"/> used by the channel to make HTTP calls.
+            </summary>
+            <remarks>
+            <para>
+            By default a <see cref="T:System.Net.Http.HttpClient"/> specified here will not be disposed with the channel.
+            To dispose the <see cref="T:System.Net.Http.HttpClient"/> with the channel you must set <see cref="P:Grpc.Net.Client.GrpcChannelOptions.DisposeHttpClient"/>
+            to <c>true</c>.
+            </para>
+            <para>
+            Only one HTTP caller can be specified for a channel. An error will be thrown if this is configured
+            together with <see cref="P:Grpc.Net.Client.GrpcChannelOptions.HttpHandler"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Grpc.Net.Client.GrpcChannelOptions.HttpHandler">
+            <summary>
+            Gets or sets the <see cref="T:System.Net.Http.HttpMessageHandler"/> used by the channel to make HTTP calls.
+            </summary>
+            <remarks>
+            <para>
+            By default a <see cref="T:System.Net.Http.HttpMessageHandler"/> specified here will not be disposed with the channel.
+            To dispose the <see cref="T:System.Net.Http.HttpMessageHandler"/> with the channel you must set <see cref="P:Grpc.Net.Client.GrpcChannelOptions.DisposeHttpClient"/>
+            to <c>true</c>.
+            </para>
+            <para>
+            Only one HTTP caller can be specified for a channel. An error will be thrown if this is configured
+            together with <see cref="P:Grpc.Net.Client.GrpcChannelOptions.HttpClient"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Grpc.Net.Client.GrpcChannelOptions.DisposeHttpClient">
+            <summary>
+            Gets or sets a value indicating whether the underlying <see cref="T:System.Net.Http.HttpClient"/> or 
+            <see cref="T:System.Net.Http.HttpMessageHandler"/> should be disposed when the <see cref="T:Grpc.Net.Client.GrpcChannel"/> instance is disposed.
+            The default value is <c>false</c>.
+            </summary>
+            <remarks>
+            This setting is used when a <see cref="P:Grpc.Net.Client.GrpcChannelOptions.HttpClient"/> or <see cref="P:Grpc.Net.Client.GrpcChannelOptions.HttpHandler"/> value is specified.
+            If they are not specified then the channel will create an internal HTTP caller that is always disposed
+            when the channel is disposed.
+            </remarks>
+        </member>
+        <member name="P:Grpc.Net.Client.GrpcChannelOptions.ThrowOperationCanceledOnCancellation">
+            <summary>
+            Gets or sets a value indicating whether clients will throw <see cref="T:System.OperationCanceledException"/> for a call when its
+            <see cref="P:Grpc.Core.CallOptions.CancellationToken"/> is triggered or its <see cref="P:Grpc.Core.CallOptions.Deadline"/> is exceeded.
+            The default value is <c>false</c>.
+            Note: experimental API that can change or be removed without any prior notice.
+            </summary>
+        </member>
+        <member name="M:Grpc.Net.Client.GrpcChannelOptions.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Grpc.Net.Client.GrpcChannelOptions"/> class.
+            </summary>
+        </member>
+        <member name="M:Grpc.Net.Client.Internal.GrpcCall`2.Cleanup(Grpc.Core.Status)">
+            <summary>
+            Clean up can be called by:
+            1. The user. AsyncUnaryCall.Dispose et al will call this on Dispose
+            2. <see cref="M:Grpc.Net.Client.Internal.GrpcCall`2.ValidateHeaders(System.Net.Http.HttpResponseMessage)"/> will call dispose if errors fail validation
+            3. <see cref="M:Grpc.Net.Client.Internal.GrpcCall`2.FinishResponseAndCleanUp(Grpc.Core.Status)"/> will call dispose
+            </summary>
+        </member>
+        <member name="M:Grpc.Net.Client.Internal.GrpcCall`2.ResponseStreamEnded(Grpc.Core.Status)">
+            <summary>
+            Used by response stream reader to report it is finished.
+            </summary>
+            <param name="status">The completed response status code.</param>
+        </member>
+        <member name="M:Grpc.Net.Client.Internal.GrpcCallSerializationContext.TryGetPayload(System.ReadOnlyMemory{System.Byte}@)">
+            <summary>
+            Obtains the payload from this operation, and returns a boolean indicating
+            whether the serialization was complete; the state is reset either way.
+            </summary>
+        </member>
+        <member name="T:Grpc.Net.Client.Internal.GrpcMethodInfo">
+            <summary>
+            Cached log scope and URI for a gRPC <see cref="T:Grpc.Core.IMethod"/>.
+            </summary>
+        </member>
+        <member name="T:Grpc.Net.Client.Internal.HttpClientCallInvoker">
+            <summary>
+            A client-side RPC invocation using HttpClient.
+            </summary>
+        </member>
+        <member name="M:Grpc.Net.Client.Internal.HttpClientCallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)">
+            <summary>
+            Invokes a client streaming call asynchronously.
+            In client streaming scenario, client sends a stream of requests and server responds with a single response.
+            </summary>
+        </member>
+        <member name="M:Grpc.Net.Client.Internal.HttpClientCallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)">
+            <summary>
+            Invokes a duplex streaming call asynchronously.
+            In duplex streaming scenario, client sends a stream of requests and server responds with a stream of responses.
+            The response stream is completely independent and both side can be sending messages at the same time.
+            </summary>
+        </member>
+        <member name="M:Grpc.Net.Client.Internal.HttpClientCallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)">
+            <summary>
+            Invokes a server streaming call asynchronously.
+            In server streaming scenario, client sends on request and server responds with a stream of responses.
+            </summary>
+        </member>
+        <member name="M:Grpc.Net.Client.Internal.HttpClientCallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)">
+            <summary>
+            Invokes a simple remote call asynchronously.
+            </summary>
+        </member>
+        <member name="M:Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)">
+            <summary>
+            Invokes a simple remote call in a blocking fashion.
+            </summary>
+        </member>
+        <member name="P:Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.IsMoveNextInProgressUnsynchronized">
+            <summary>
+            A value indicating whether there is an async move next already in progress.
+            Should only check this property when holding the move next lock.
+            </summary>
+        </member>
+        <member name="P:Grpc.Net.Client.Internal.HttpContentClientStreamWriter`2.IsWriteInProgressUnsynchronized">
+            <summary>
+            A value indicating whether there is an async write already in progress.
+            Should only check this property when holding the write lock.
+            </summary>
+        </member>
+    </members>
+</doc>

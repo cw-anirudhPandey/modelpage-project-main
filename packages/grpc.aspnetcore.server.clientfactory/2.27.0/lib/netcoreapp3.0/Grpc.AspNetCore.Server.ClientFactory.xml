@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Grpc.AspNetCore.Server.ClientFactory</name>
+    </assembly>
+    <members>
+        <member name="T:Grpc.AspNetCore.Server.ClientFactory.ContextPropagationInterceptor">
+            <summary>
+            Interceptor that will set the current request's cancellation token and deadline onto CallOptions.
+            This interceptor is registered with a singleton lifetime. The interceptor gets the request from
+            IHttpContextAccessor, which is also a singleton. IHttpContextAccessor uses an async local value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.GrpcServerHttpClientBuilderExtensions">
+            <summary>
+            Extension methods for configuring an <see cref="T:Microsoft.Extensions.DependencyInjection.IHttpClientBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.GrpcServerHttpClientBuilderExtensions.EnableCallContextPropagation(Microsoft.Extensions.DependencyInjection.IHttpClientBuilder)">
+            <summary>
+            Configures the server to propagate values from a call's <see cref="T:Grpc.Core.ServerCallContext"/>
+            onto the gRPC client.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.DependencyInjection.IHttpClientBuilder"/>.</param>
+            <returns>An <see cref="T:Microsoft.Extensions.DependencyInjection.IHttpClientBuilder"/> that can be used to configure the client.</returns>
+        </member>
+    </members>
+</doc>

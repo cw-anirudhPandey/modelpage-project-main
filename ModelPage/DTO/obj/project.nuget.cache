@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vvDg6t3WuwpCktI0ugqfQZixaSECZgD5a2mZiI1Dzw49RoXwlb0XvnXTaiBYqE/WroxVu8u8KMIyOap+EbyE6g==",
+  "success": true,
+  "projectFilePath": "D:\\modelpage-project-main\\ModelPage\\DTO\\DTO.csproj",
+  "expectedPackageFiles": [
+    "D:\\modelpage-project-main\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

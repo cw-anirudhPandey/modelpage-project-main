@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>System.Data.OracleClient</id>
+        <version>1.0.8</version>
+        <authors>@tonyrapozo</authors>
+        <owners>@tonyrapozo</owners>
+        <projectUrl>https://github.com/tonyrapozo/System.Data.OracleClient</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Oracle client provider for .Net Core based on mono implementation;</description>
+        <dependencies>
+            <group targetFramework=".NETStandard2.0">
+                <dependency id="System.Data.Common" version="4.3.0" exclude="Build,Analyzers" />
+            </group>
+        </dependencies>
+    </metadata>
+</package>
