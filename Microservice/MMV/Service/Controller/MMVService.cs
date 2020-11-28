@@ -4,15 +4,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
+using MMV.Business.Interfaces;
+using MMV.Entities;
+using MMV.Service.ProtoClass;
 
 namespace MMV.Service.Controller
 {
   public class MMVService : MMV.Service.ProtoClass.MMVService.MMVServiceBase
   {
     private readonly ILogger<MMVService> _logger;
-    public MMVService(ILogger<MMVService> logger)
+    private readonly ICarMakeLogic _carMakeLogic;
+    private readonly ICarModelLogic _carModelLogic;
+    private readonly ICarVersionLogic _carVersionLogic;
+
+    public MMVService(ILogger<MMVService> logger, ICarMakeLogic carMakeLogic, ICarModelLogic carModelLogic,
+       ICarVersionLogic carVersionLogic)
     {
       _logger = logger;
+      _carMakeLogic = carMakeLogic;
+      _carModelLogic = carModelLogic;
+      _carVersionLogic = carVersionLogic;
     }
 
     public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
@@ -26,7 +37,7 @@ namespace MMV.Service.Controller
 
     public override async Task<MakeResponse> GetMake(GrpcInt request, ServerCallContext context)
     {
-      var makeDetails = await _modelDataLogic.GetMake(request.Value);
+      var makeDetails = await _carMakeLogic.GetMake(request.Value);
       return new MakeResponse
       {
         Id = makeDetails.Id,
@@ -36,7 +47,7 @@ namespace MMV.Service.Controller
 
     public override async Task<ModelResponse> GetModel(GrpcInt request, ServerCallContext context)
     {
-      var modelDetails = await _modelDataLogic.GetModel(request.Value);
+      var modelDetails = await _carModelLogic.GetModel(request.Value);
       return new ModelResponse
       {
         Id = modelDetails.Id,
@@ -47,7 +58,7 @@ namespace MMV.Service.Controller
 
     public override async Task<VersionListResponse> GetVersionList(GrpcInt request, ServerCallContext context)
     {
-      var versionList = await _modelDataLogic.GetVersionList(request.Value);
+      var versionList = await _carVersionLogic.GetVersionList(request.Value);
       return getVersionListProto(versionList);
     }
 
@@ -68,7 +79,7 @@ namespace MMV.Service.Controller
 
     public override async Task<VersionResponse> GetDefaultVersionByModelId(GrpcInt request, ServerCallContext context)
     {
-      var details = await _modelDataLogic.GetDefaultVersionByModelId(request.Value);
+      var details = await _carVersionLogic.GetDefaultVersionByModelId(request.Value);
       return new VersionResponse()
       {
         Id = details.Id,

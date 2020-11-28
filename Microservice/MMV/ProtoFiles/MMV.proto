@@ -22,6 +22,10 @@ message HelloRequest {
   string name = 1;
 }
 
+message GrpcInt
+{
+  int32 Value = 1;
+}
 
 //=========================Response-=============================
 
