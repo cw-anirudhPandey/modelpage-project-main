@@ -1,0 +1,2 @@
+obj\Debug\netcoreapp3.1/Price.cs \
+obj\Debug\netcoreapp3.1/PriceGrpc.cs: ../ProtoFiles/Price.proto

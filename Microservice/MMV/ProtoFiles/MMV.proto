@@ -36,7 +36,8 @@ message MakeResponse {
 
 message ModelResponse {
   int32 id = 1;
-  string name = 2;
+  int32 makeId = 2;
+  string name = 3;
 }
 
 message VersionListResponse {

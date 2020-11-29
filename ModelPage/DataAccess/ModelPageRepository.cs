@@ -4,7 +4,11 @@ using System.Threading.Tasks;
 using ModelPage.Entities;
 using Grpc.Net.Client;
 using GrpcModelPage;
+using ModelPage.DataAccess.Interfaces;
 
+namespace ModelPage.DataAccess
+{
+    
 public class ModelPageRepository : IModelPageRepository
 {
   // private readonly IConfiguration _config;
@@ -48,9 +52,9 @@ public class ModelPageRepository : IModelPageRepository
     return modelDetails;
   }
 
-  public async Task<Image> GetImage(int modelId)
+  public async Task<CarImage> GetImage(int modelId)
   {
-    Image imageDetails = new Image();
+    CarImage imageDetails = new CarImage();
     try
     {
       var client = new Greeter.GreeterClient(_channel);
@@ -235,6 +239,5 @@ public class ModelPageRepository : IModelPageRepository
     }
     return emiDetails;
   }
-
-
+}
 }

@@ -10,7 +10,6 @@ using System.Collections.Generic;
 
 namespace webapp.Controllers
 {
-  
   public class CarModelController : ControllerBase
   {
     private readonly Logger _logger = LoggerFactory.GetLogger(typeof(CarModelController));
@@ -22,7 +21,7 @@ namespace webapp.Controllers
     }
 
     [HttpGet]
-    [Route("model/{id?}")]
+    [Route("api/model/{id}")]
     public async Task<CarModelDetails> Get(int id)
     {
       try
@@ -38,7 +37,7 @@ namespace webapp.Controllers
     }
 
     [HttpGet]
-    [Route("/price/{cityId}")]
+    [Route("api/price/{cityId}")]
     public async Task<IEnumerable<CarPrice>> GetPriceByCityId(int cityId)
     {
       try
@@ -51,6 +50,24 @@ namespace webapp.Controllers
       {
         _logger.LogException(ex);
         return new List<CarPrice>();
+      }
+    }
+
+    [HttpGet]
+    [Route("/debug/{cityId}/{versionId}")]
+    public async Task Debug(int cityId, int versionId)
+    {
+      try
+      {
+        await _modelPageLogic.debug(cityId, versionId);
+        // await _modelPageLogic.GetPriceListByCityId(cityId);
+        // IEnumerable<CarPrice> details = await _modelPageLogic.GetPriceListByCityId(cityId);
+        // return details;
+      }
+      catch (Exception ex)
+      {
+        _logger.LogException(ex);
+        // return new List<CarPrice>();
       }
     }
   }

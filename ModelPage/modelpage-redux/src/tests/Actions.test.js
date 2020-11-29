@@ -7,7 +7,7 @@ import {
   changeSelectedVersion,
   changeSelectedPrice,
   changeShowToolTip,
-  changePriceVersionCityList,
+  changePriceDetailList,
 } from "../actions/Actions";
 
 describe("Action Creators", () => {
@@ -57,7 +57,7 @@ describe("Action Creators", () => {
 
     expect(changeShowToolTip(true)).toEqual(expectedAction);
   });
-  test("changePriceVersionCityList action creator, returns expected action", () => {
+  test("changePriceDetailList action creator, returns expected action", () => {
     const priceDetailsList = [
       {
         price: 40000,
@@ -65,9 +65,9 @@ describe("Action Creators", () => {
         city: "Mumbai"
       }
     ];
-    expectedAction.type = "CHANGE_PRICE_VERSION_CITY_LIST";
+    expectedAction.type = "CHANGE_PRICE_DETAIL_LIST";
     expectedAction.data = priceDetailsList;
 
-    expect(changePriceVersionCityList(priceDetailsList)).toEqual(expectedAction);
+    expect(changePriceDetailList(priceDetailsList)).toEqual(expectedAction);
   });
 });

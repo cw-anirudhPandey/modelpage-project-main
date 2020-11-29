@@ -1,9 +1,8 @@
 import { handleChange, changeToolTipStatus } from "../utils";
 
 describe("test handleChange function", () => {
-  let setIsOpen, changeToolTipStatus, props;
+  let changeToolTipStatus, props;
   beforeEach(() => {
-    setIsOpen = jest.fn();
     changeToolTipStatus = jest.fn();
     props = {
       type: "City",

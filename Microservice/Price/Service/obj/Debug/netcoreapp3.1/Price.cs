@@ -25,22 +25,25 @@ namespace Price.Service.ProtoClass {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CgtQcmljZS5wcm90bxIFUHJpY2UiHAoMSGVsbG9SZXF1ZXN0EgwKBG5hbWUY",
-            "ASABKAkiGAoHR3JwY0ludBINCgVWYWx1ZRgBIAEoBSI4ChFQcmljZUxpc3RS",
-            "ZXNwb25zZRIjCgVwcmljZRgBIAMoCzIULlByaWNlLlByaWNlUmVzcG9uc2Ui",
-            "TQoNUHJpY2VSZXNwb25zZRIKCgJpZBgBIAEoBRIRCgl2ZXJzaW9uSWQYAiAB",
-            "KAUSDgoGY2l0eUlkGAMgASgFEg0KBXZhbHVlGAQgASgJIhsKCkdycGNTdHJp",
-            "bmcSDQoFdmFsdWUYASABKAkiHQoKSGVsbG9SZXBseRIPCgdtZXNzYWdlGAEg",
-            "ASgJMsEBCgxQcmljZVNlcnZpY2USMgoIU2F5SGVsbG8SEy5QcmljZS5IZWxs",
-            "b1JlcXVlc3QaES5QcmljZS5IZWxsb1JlcGx5EkAKFEdldFByaWNlTGlzdEJ5",
-            "Q2l0eUlkEg4uUHJpY2UuR3JwY0ludBoYLlByaWNlLlByaWNlTGlzdFJlc3Bv",
-            "bnNlEjsKFkdldEF2Z1ByaWNlQnlWZXJzaW9uSWQSDi5QcmljZS5HcnBjSW50",
-            "GhEuUHJpY2UuR3JwY1N0cmluZ0IbqgIYUHJpY2UuU2VydmljZS5Qcm90b0Ns",
-            "YXNzYgZwcm90bzM="));
+            "ASABKAkiGAoHR3JwY0ludBINCgV2YWx1ZRgBIAEoBSIvCgpHcnBjVHdvSW50",
+            "Eg4KBmNpdHlJZBgBIAEoBRIRCgl2ZXJzaW9uSWQYAiABKAUiOAoRUHJpY2VM",
+            "aXN0UmVzcG9uc2USIwoFcHJpY2UYASADKAsyFC5QcmljZS5QcmljZVJlc3Bv",
+            "bnNlIk0KDVByaWNlUmVzcG9uc2USCgoCaWQYASABKAUSEQoJdmVyc2lvbklk",
+            "GAIgASgFEg4KBmNpdHlJZBgDIAEoBRINCgV2YWx1ZRgEIAEoCSIbCgpHcnBj",
+            "U3RyaW5nEg0KBXZhbHVlGAEgASgJIh0KCkhlbGxvUmVwbHkSDwoHbWVzc2Fn",
+            "ZRgBIAEoCTKDAgoMUHJpY2VTZXJ2aWNlEjIKCFNheUhlbGxvEhMuUHJpY2Uu",
+            "SGVsbG9SZXF1ZXN0GhEuUHJpY2UuSGVsbG9SZXBseRJAChRHZXRQcmljZUxp",
+            "c3RCeUNpdHlJZBIOLlByaWNlLkdycGNJbnQaGC5QcmljZS5QcmljZUxpc3RS",
+            "ZXNwb25zZRJAChVHZXRQcmljZUJ5Q2l0eVZlcnNpb24SES5QcmljZS5HcnBj",
+            "VHdvSW50GhQuUHJpY2UuUHJpY2VSZXNwb25zZRI7ChZHZXRBdmdQcmljZUJ5",
+            "VmVyc2lvbklkEg4uUHJpY2UuR3JwY0ludBoRLlByaWNlLkdycGNTdHJpbmdC",
+            "G6oCGFByaWNlLlNlcnZpY2UuUHJvdG9DbGFzc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.HelloRequest), global::Price.Service.ProtoClass.HelloRequest.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.GrpcInt), global::Price.Service.ProtoClass.GrpcInt.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.GrpcTwoInt), global::Price.Service.ProtoClass.GrpcTwoInt.Parser, new[]{ "CityId", "VersionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.PriceListResponse), global::Price.Service.ProtoClass.PriceListResponse.Parser, new[]{ "Price" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.PriceResponse), global::Price.Service.ProtoClass.PriceResponse.Parser, new[]{ "Id", "VersionId", "CityId", "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.GrpcString), global::Price.Service.ProtoClass.GrpcString.Parser, new[]{ "Value" }, null, null, null, null),
@@ -218,7 +221,7 @@ namespace Price.Service.ProtoClass {
       return new GrpcInt(this);
     }
 
-    /// <summary>Field number for the "Value" field.</summary>
+    /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
     private int value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -313,6 +316,163 @@ namespace Price.Service.ProtoClass {
 
   }
 
+  public sealed partial class GrpcTwoInt : pb::IMessage<GrpcTwoInt> {
+    private static readonly pb::MessageParser<GrpcTwoInt> _parser = new pb::MessageParser<GrpcTwoInt>(() => new GrpcTwoInt());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GrpcTwoInt> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GrpcTwoInt() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GrpcTwoInt(GrpcTwoInt other) : this() {
+      cityId_ = other.cityId_;
+      versionId_ = other.versionId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GrpcTwoInt Clone() {
+      return new GrpcTwoInt(this);
+    }
+
+    /// <summary>Field number for the "cityId" field.</summary>
+    public const int CityIdFieldNumber = 1;
+    private int cityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CityId {
+      get { return cityId_; }
+      set {
+        cityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "versionId" field.</summary>
+    public const int VersionIdFieldNumber = 2;
+    private int versionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int VersionId {
+      get { return versionId_; }
+      set {
+        versionId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GrpcTwoInt);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GrpcTwoInt other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CityId != other.CityId) return false;
+      if (VersionId != other.VersionId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CityId != 0) hash ^= CityId.GetHashCode();
+      if (VersionId != 0) hash ^= VersionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (CityId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(CityId);
+      }
+      if (VersionId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(VersionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (CityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CityId);
+      }
+      if (VersionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(VersionId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GrpcTwoInt other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CityId != 0) {
+        CityId = other.CityId;
+      }
+      if (other.VersionId != 0) {
+        VersionId = other.VersionId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            CityId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            VersionId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class PriceListResponse : pb::IMessage<PriceListResponse> {
     private static readonly pb::MessageParser<PriceListResponse> _parser = new pb::MessageParser<PriceListResponse>(() => new PriceListResponse());
     private pb::UnknownFieldSet _unknownFields;
@@ -321,7 +481,7 @@ namespace Price.Service.ProtoClass {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -442,7 +602,7 @@ namespace Price.Service.ProtoClass {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -655,7 +815,7 @@ namespace Price.Service.ProtoClass {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -787,7 +947,7 @@ namespace Price.Service.ProtoClass {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

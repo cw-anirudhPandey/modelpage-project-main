@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option csharp_namespace = "Location";
+
+package Location;
+
+service LocationService {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+
+  rpc GetAllCities (EmptyParam) returns (CityListResponse);
+}
+
+//=========================Request-=============================
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+message EmptyParam
+{}
+
+//=========================Response-=============================
+
+message CityListResponse {
+  repeated CityResponse city = 1;
+}
+
+message CityResponse {
+  int32 id = 1;
+  string name = 2;
+}
+
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+

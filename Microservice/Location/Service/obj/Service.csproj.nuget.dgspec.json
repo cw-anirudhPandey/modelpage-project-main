@@ -265,7 +265,7 @@
           "dependencies": {
             "AEPLCore.Cache": {
               "target": "Package",
-              "version": "[*, )"
+              "version": "[4.1.3, )"
             },
             "Grpc.AspNetCore": {
               "target": "Package",

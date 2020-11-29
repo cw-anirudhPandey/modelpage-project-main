@@ -1,10 +1,11 @@
+body {
+  font-family: 'Lato';
+}
+
 .Rectangle {
-  width: 360px;
-  height: 56px;
-  padding: 3px 16px;
-  border-radius: 5px;
-  border-color: #999;
-  background-color: #ffffff;
+  width: 100%;
+  height: 5%;
+  padding: 3px 10px;
 }
 
 .center-container {
@@ -25,7 +26,6 @@
 
 .emi-widget {
   padding: 10px;
-  margin: 5px;
 }
 
 .rating-text {
@@ -33,19 +33,35 @@
 }
 
 .selection-popup {
+  max-height: 10%;
+  min-height: 10%;
   display: inline-block;
-  margin: 0 10px;
-  padding: 0 5px;
-  max-width: 50%;
+  max-width: 49%;
+  width: 49%;
+  border: 0.2px #d8d8d850 solid;
+  cursor: pointer;
+}
+
+.selection-popup-type {
+  padding-left: 7px;
+  padding-top: 5px;
+  font-size: 0.8em;
+  color: grey;
+}
+
+.selection-popup-text {
+  padding-left: 10px;
+  font-size: 0.8em;
+  /* padding-top: 2px; */
 }
 
 .nav-icon {
   cursor: pointer;
-  margin-left: 120px;
+  margin-left: 105px;
 }
 
 .link {
-  margin: 5px;
+  margin: 3px;
 }
 
 .link-title {
@@ -68,6 +84,8 @@
   border-radius: 3px;
   border: solid 1px #00aaff;
   background-color: #edf5f8;
+/*   
+  border: 0.2px #53535350 solid; */
 }
 
 .Shape {
@@ -78,12 +96,32 @@
 }
 
 .popup-box {
+  border: 0.2px #53535350 solid;
   position: fixed;
   background: #00000050;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
+}
+
+.popup-elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.5px #53535350 solid;
+  cursor: pointer;
+}
+
+.popup-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+}
+
+.header-title {
+  display: inline-block;
 }
 
 .box {
@@ -109,10 +147,10 @@
 
 /* Tooltip text */
 .tooltip .tooltiptext {
-  width: 120px;
+  width: 100px;
   top: 100%;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -50px;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   text-align: center;

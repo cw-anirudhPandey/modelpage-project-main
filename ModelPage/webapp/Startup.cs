@@ -13,6 +13,8 @@ using AEPLCore.Cache.Extensions;
 using AutoMapper;
 using AEPLCore.Logging;
 using ModelPage.Business;
+using ModelPage.DataAccess;
+using ModelPage.DataAccess.Interfaces;
 
 namespace webapp
 {
@@ -36,6 +38,11 @@ namespace webapp
       Console.WriteLine(consulHost + "-------------------------" + Configuration["AppSettings:ModuleName"]);
       services.AddLogUpdater(consulHost + ":8500", Configuration["AppSettings:ModuleName"]);
       services.AddSingleton<IModelPageRepository, ModelPageRepository>();
+      services.AddSingleton<IUserReviewRepository, UserReviewRepository>();
+      services.AddSingleton<IMMVRepository, MMVRepository>();
+      services.AddSingleton<IImageRepository, ImageRepository>();
+      services.AddSingleton<IPriceRepository, PriceRepository>();
+      services.AddSingleton<ILocationRepository, LocationRepository>();
       services.AddSingleton<IModelPageLogic, ModelPageLogic>();
       services.AddCacheConfiguration(Configuration);
     }

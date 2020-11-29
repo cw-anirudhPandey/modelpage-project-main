@@ -46,6 +46,38 @@ namespace Price.DataAccess
       return priceList;
     }
 
+    public async Task<CarPrice> GetPriceByCityVersion(int cityId, int versionId)
+    {
+      var price = new CarPrice();
+      try
+      {
+        using (IDbConnection conn = new MySqlConnection(_config.GetConnectionString("modelPageDBString")))
+        {
+          string query = @"SELECT 
+                            carPriceId AS Id, 
+                            carVersionId as VersionId, 
+                            cityId as CityId,
+                            carPrice AS Value
+                        FROM
+                            _carPrice
+                        WHERE
+                            cityId = @CityId
+                          And
+                            carVersionId = @VersionId";
+          price = (await conn.QueryAsync<CarPrice>(query, new
+          {
+            CityId = cityId,
+            VersionId = versionId
+          })).FirstOrDefault();
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message + "GetPriceByCityVersion method in DAL of cityId = " + cityId);
+      }
+      return price;
+    }
+
     public async Task<CarPrice> GetAvgPriceByVersionId(int versionId)
     {
       var priceDetails = new CarPrice();
@@ -54,7 +86,7 @@ namespace Price.DataAccess
         using (IDbConnection conn = new MySqlConnection(_config.GetConnectionString("modelPageDBString")))
         {
           string query = @"SELECT 
-                            avg(carPrice) AS Value
+                            floor(avg(carPrice)) AS Value
                         FROM
                             _carPrice
                         WHERE

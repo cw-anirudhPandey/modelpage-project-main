@@ -9,6 +9,7 @@ service PriceService {
   rpc SayHello (HelloRequest) returns (HelloReply);
 
   rpc GetPriceListByCityId (GrpcInt) returns (PriceListResponse);
+  rpc GetPriceByCityVersion (GrpcTwoInt) returns (PriceResponse);
   rpc GetAvgPriceByVersionId (GrpcInt) returns (GrpcString);
 }
 
@@ -20,7 +21,13 @@ message HelloRequest {
 
 message GrpcInt
 {
-  int32 Value = 1;
+  int32 value = 1;
+}
+
+message GrpcTwoInt
+{
+  int32 cityId = 1;
+  int32 versionId = 2;
 }
 
 //=========================Response-=============================

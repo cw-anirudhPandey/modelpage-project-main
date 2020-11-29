@@ -51,6 +51,18 @@ namespace Price.Service.Controller
       return priceListProto;
     }
 
+    public override async Task<PriceResponse> GetPriceByCityVersion(GrpcTwoInt request, ServerCallContext context)
+    {
+      var price = await _priceLogic.GetPriceByCityVersion(request.CityId, request.VersionId);
+      return new PriceResponse()
+      {
+        Id = price.Id,
+        VersionId = price.VersionId,
+        CityId = price.CityId,
+        Value = price.Value
+      };
+    }
+
     public override async Task<GrpcString> GetAvgPriceByVersionId(GrpcInt request, ServerCallContext context)
     {
       var details = await _priceLogic.GetAvgPriceByVersionId(request.Value);

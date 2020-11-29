@@ -50,7 +50,7 @@
           "dependencies": {
             "AEPLCore.Cache": {
               "target": "Package",
-              "version": "[*, )"
+              "version": "[4.1.3, )"
             }
           },
           "imports": [
@@ -97,7 +97,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\modelpage-project-main\\Microservice\\UserReview\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\modelpage-project-main\\Microservice\\UserReview\\Entities\\Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

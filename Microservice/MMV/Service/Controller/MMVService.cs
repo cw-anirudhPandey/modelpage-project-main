@@ -51,6 +51,7 @@ namespace MMV.Service.Controller
       return new ModelResponse
       {
         Id = modelDetails.Id,
+        MakeId = modelDetails.MakeId,
         Name = modelDetails.ModelName
       };
     }

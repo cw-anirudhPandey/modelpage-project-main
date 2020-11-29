@@ -16,6 +16,8 @@ namespace Price.Service.ProtoClass {
     static readonly grpc::Marshaller<global::Price.Service.ProtoClass.HelloReply> __Marshaller_Price_HelloReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Price.Service.ProtoClass.HelloReply.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Price.Service.ProtoClass.GrpcInt> __Marshaller_Price_GrpcInt = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Price.Service.ProtoClass.GrpcInt.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Price.Service.ProtoClass.PriceListResponse> __Marshaller_Price_PriceListResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Price.Service.ProtoClass.PriceListResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Price.Service.ProtoClass.GrpcTwoInt> __Marshaller_Price_GrpcTwoInt = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Price.Service.ProtoClass.GrpcTwoInt.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Price.Service.ProtoClass.PriceResponse> __Marshaller_Price_PriceResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Price.Service.ProtoClass.PriceResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Price.Service.ProtoClass.GrpcString> __Marshaller_Price_GrpcString = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Price.Service.ProtoClass.GrpcString.Parser.ParseFrom);
 
     static readonly grpc::Method<global::Price.Service.ProtoClass.HelloRequest, global::Price.Service.ProtoClass.HelloReply> __Method_SayHello = new grpc::Method<global::Price.Service.ProtoClass.HelloRequest, global::Price.Service.ProtoClass.HelloReply>(
@@ -31,6 +33,13 @@ namespace Price.Service.ProtoClass {
         "GetPriceListByCityId",
         __Marshaller_Price_GrpcInt,
         __Marshaller_Price_PriceListResponse);
+
+    static readonly grpc::Method<global::Price.Service.ProtoClass.GrpcTwoInt, global::Price.Service.ProtoClass.PriceResponse> __Method_GetPriceByCityVersion = new grpc::Method<global::Price.Service.ProtoClass.GrpcTwoInt, global::Price.Service.ProtoClass.PriceResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetPriceByCityVersion",
+        __Marshaller_Price_GrpcTwoInt,
+        __Marshaller_Price_PriceResponse);
 
     static readonly grpc::Method<global::Price.Service.ProtoClass.GrpcInt, global::Price.Service.ProtoClass.GrpcString> __Method_GetAvgPriceByVersionId = new grpc::Method<global::Price.Service.ProtoClass.GrpcInt, global::Price.Service.ProtoClass.GrpcString>(
         grpc::MethodType.Unary,
@@ -65,6 +74,11 @@ namespace Price.Service.ProtoClass {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      public virtual global::System.Threading.Tasks.Task<global::Price.Service.ProtoClass.PriceResponse> GetPriceByCityVersion(global::Price.Service.ProtoClass.GrpcTwoInt request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
       public virtual global::System.Threading.Tasks.Task<global::Price.Service.ProtoClass.GrpcString> GetAvgPriceByVersionId(global::Price.Service.ProtoClass.GrpcInt request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -79,6 +93,7 @@ namespace Price.Service.ProtoClass {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_SayHello, serviceImpl.SayHello)
           .AddMethod(__Method_GetPriceListByCityId, serviceImpl.GetPriceListByCityId)
+          .AddMethod(__Method_GetPriceByCityVersion, serviceImpl.GetPriceByCityVersion)
           .AddMethod(__Method_GetAvgPriceByVersionId, serviceImpl.GetAvgPriceByVersionId).Build();
     }
 
@@ -90,6 +105,7 @@ namespace Price.Service.ProtoClass {
     {
       serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Price.Service.ProtoClass.HelloRequest, global::Price.Service.ProtoClass.HelloReply>(serviceImpl.SayHello));
       serviceBinder.AddMethod(__Method_GetPriceListByCityId, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Price.Service.ProtoClass.GrpcInt, global::Price.Service.ProtoClass.PriceListResponse>(serviceImpl.GetPriceListByCityId));
+      serviceBinder.AddMethod(__Method_GetPriceByCityVersion, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Price.Service.ProtoClass.GrpcTwoInt, global::Price.Service.ProtoClass.PriceResponse>(serviceImpl.GetPriceByCityVersion));
       serviceBinder.AddMethod(__Method_GetAvgPriceByVersionId, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Price.Service.ProtoClass.GrpcInt, global::Price.Service.ProtoClass.GrpcString>(serviceImpl.GetAvgPriceByVersionId));
     }
 

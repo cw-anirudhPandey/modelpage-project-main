@@ -5,10 +5,11 @@ const Popup = (props) => {
   return (
     <div className="popup-box">
       <div className="box">
-        <h1 style={{ alignContent: "center" }}>{props.title}</h1>
+        <h3 className="popup-title">{props.title}</h3>
         {props.children}
         <button
           onClick={() => {
+            console.log('hi');
             props.changeIsOpen(props.type, false);
           }}
         >

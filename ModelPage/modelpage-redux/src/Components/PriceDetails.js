@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { formatPrice } from '../utils';
+
 function mapStateToProps(store) {
   return {
     price: store.selected.price,
@@ -10,7 +12,7 @@ function mapStateToProps(store) {
 const PriceDetails = (props) => {
   return (
     <div>
-      <h2 className="center-container">₹ {props.price} Lakhs</h2>
+      <h2 className="center-container">₹ {formatPrice(props?.price)} Lakhs</h2>
       <h5 className="center-container">On Road Type</h5>
     </div>
   );

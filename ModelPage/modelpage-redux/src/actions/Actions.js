@@ -12,18 +12,9 @@ function changeSelectedVersion(selectedText) {
   };
 }
 
-function setSelectedPrice(selectedPrice) {
+function changeSelectedPrice() {
   return {
-    type: "SET_SELECTED_PRICE",
-    data: selectedPrice
-  };
-}
-
-function changeSelectedPrice(selectedVersion, selectedCity) {
-  return {
-    type: "CHANGE_SELECTED_PRICE",
-    selectedVersion,
-    selectedCity
+    type: "CHANGE_SELECTED_PRICE"
   };
 }
 
@@ -58,9 +49,9 @@ function changeVersionList(versionList) {
   };
 }
 
-function changePriceVersionCityList(priceVersionCityList) {
+function changePriceDetailList(priceVersionCityList) {
   return {
-    type: "CHANGE_PRICE_VERSION_CITY_LIST",
+    type: "CHANGE_PRICE_DETAIL_LIST",
     data: priceVersionCityList,
   };
 }
@@ -73,5 +64,5 @@ export {
   changeSelectedPrice,
   changeShowToolTip,
   changePopupStatus,
-  changePriceVersionCityList,
+  changePriceDetailList,
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { SelectionPopup } from "../Components/SelectionPopup";
-import { handleChange, changeToolTipStatus } from "../Components/Navigation";
 
 describe("test Navigation Component", () => {
   let props;

@@ -9,5 +9,6 @@ namespace ModelPage.Business
   {
     Task<CarModelDetails> GetModelPageData(int modelId);
     Task<IEnumerable<CarPrice>> GetPriceListByCityId(int modelId);
+    Task debug(int cityId, int versionId);
   }
 }

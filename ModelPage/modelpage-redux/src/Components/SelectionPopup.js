@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import Popup from "./Popup";
 
@@ -11,6 +11,7 @@ import {
   changeShowToolTip,
   changeSelectedPrice,
   changePopupStatus,
+  changePriceDetailList,
 } from "../actions/Actions";
 
 import {
@@ -24,45 +25,43 @@ import {
 export const SelectionPopup = (props) => {
   const list = props.type === "City" ? props.cityList : props.versionList;
   const title = `Select ${props.type ? props.type : "City"}`;
-  const [selectedCitystate, setSelectedCitystate] = useState(props.city);
-  // const [selectedVersionstate, setSelectedVersionstate] = useState(props.version);
-
-  useEffect(() => {
-    console.log("[selectedCitystate] updated");
-  }, [selectedCitystate])
+  const selectedText =
+    props.type === "City" ? props.city?.name : props.version?.name;
 
   const renderList = list.map((element, index) => {
     return (
-      <li
-        style={{ cursor: "pointer" }}
+      <p
+        className="popup-elements"
         key={index}
         value={element.name}
-        onClick={() => handleChange(props, element.name, changeToolTipStatus)}
+        onClick={() => handleChange(props, element, changeToolTipStatus)}
       >
         {element.name}
-      </li>
+      </p>
     );
   });
 
   return (
-    <div className="selection-popup">
-      <h4>
-        {props.type}:{" "}
-        <span>{props.type === "City" ? props.city : props.version}</span>
-      </h4>
-      <button onClick={() => props.changePopupStatus(props.type, true)}>
-        Select {props.type}
-      </button>
+    <React.Fragment>
+      <div
+        className="selection-popup"
+        onClick={() => props.changePopupStatus(props.type, true)}
+      >
+        <span className="selection-popup-type">{props.type}: </span>
+        <p className="selection-popup-text">
+          {selectedText ?? "Select Nearby City"}
+        </p>
+      </div>
       {props.popupStatus.type === props.type && props.popupStatus.isOpen ? (
         <Popup
           changeIsOpen={props.changePopupStatus}
           type={props.type}
           title={title}
         >
-          <ul>{renderList}</ul>
+          <div>{renderList}</div>
         </Popup>
       ) : null}
-    </div>
+    </React.Fragment>
   );
 };
 
@@ -80,5 +79,6 @@ export default connect(
     changeShowToolTip,
     changeSelectedPrice,
     changePopupStatus,
+    changePriceDetailList,
   }
 )(SelectionPopup);

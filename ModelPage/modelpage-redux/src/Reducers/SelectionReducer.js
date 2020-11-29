@@ -1,7 +1,7 @@
 const applicationData = {
   selected: {
-    city: "",
-    version: "",
+    city: {},
+    version: {},
     price: "",
   },
   list: {
@@ -9,11 +9,11 @@ const applicationData = {
     version: [],
   },
   showToolTip: false,
-  priceVersionCityList: [],
+  priceDetailsList: [],
   popup: {
-    type: '',
-    isOpen: false
-  }
+    type: "",
+    isOpen: false,
+  },
 };
 
 // const applicationData = {
@@ -72,26 +72,20 @@ function SelectionReducer(state = applicationData, action) {
       newState.selected.version = action.data;
       return newState;
     case "CHANGE_SELECTED_PRICE":
-
-      newState.priceVersionCityList.forEach((element) => {
-        if (
-          element.version === action.selectedVersion &&
-          element.city === action.selectedCity
-        ) {
-          newState.selected.price = element.price;
-          return newState;
-        }
-      });
+      if (newState.priceDetailsList) {
+        newState.priceDetailsList.forEach((element) => {
+          if (element.versionId === newState.selected.version?.id) {
+            newState.selected.price = element.value;
+            return newState;
+          }
+        });
+      }
       return newState;
-    case "SET_SELECTED_PRICE":
-      newState.selected.price = action.data;
     case "CHANGE_SHOW_TOOLTIP":
       newState.showToolTip = action.data;
       return newState;
     case "CHANGE_POPUP_STATUS":
-      // newState.popup.type= action.data.type;
       newState.popup = action.data;
-      console.log(newState.popup);
       return newState;
     case "CHANGE_CITY_LIST":
       newState.list.city = action.data;
@@ -99,8 +93,8 @@ function SelectionReducer(state = applicationData, action) {
     case "CHANGE_VERSION_LIST":
       newState.list.version = action.data;
       return newState;
-    case "CHANGE_PRICE_VERSION_CITY_LIST":
-      newState.priceVersionCityList = action.data;
+    case "CHANGE_PRICE_DETAIL_LIST":
+      newState.priceDetailsList = action.data;
       return newState;
 
     default:

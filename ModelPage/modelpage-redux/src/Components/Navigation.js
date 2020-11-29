@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "./Image";
 import { connect } from "react-redux";
 
@@ -18,10 +18,6 @@ import {
 } from "../Selectors/Selector";
 
 export const Navigation = (props) => {
-  // let timerId;
-  // const title = `Select ${props.type ? props.type : "City"}`;
-
-
   return (
     <React.Fragment>
       <span
@@ -34,10 +30,9 @@ export const Navigation = (props) => {
           url={"https://www.flaticon.com/svg/static/icons/svg/67/67347.svg"}
         />
         {props.showToolTip ? (
-          <span className="tooltiptext">{props.city}</span>
+          <span className="tooltiptext">{props.city?.name}</span>
         ) : null}
       </span>
-
     </React.Fragment>
   );
 };

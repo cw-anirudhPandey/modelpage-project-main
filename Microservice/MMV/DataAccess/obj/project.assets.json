@@ -1763,6 +1763,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
       }
     }
   },
@@ -6162,11 +6172,17 @@
         "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Dapper >= 2.0.35",
+      "Entities >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 3.1.9",
       "Microsoft.Extensions.Configuration.FileExtensions >= 3.1.9",
       "Microsoft.Extensions.Configuration.Json >= 3.1.9",
@@ -6204,7 +6220,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\modelpage-project-main\\Microservice\\MMV\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\modelpage-project-main\\Microservice\\MMV\\Entities\\Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

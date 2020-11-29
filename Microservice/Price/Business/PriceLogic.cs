@@ -10,7 +10,7 @@ namespace Price.Business
 {
   public class PriceLogic : IPriceLogic
   {
-    private string _key = "location-{0}-{1}";
+    private string _key = "price-{0}-{1}";
     private readonly IPriceRepository _priceRepo;
     private readonly ICacheManager _cacheProvider;
     public PriceLogic(IPriceRepository priceRepo, ICacheManager cacheProvider)
@@ -25,6 +25,15 @@ namespace Price.Business
       var details = await _cacheProvider.GetFromCacheAsync<IEnumerable<CarPrice>>(cacheKey,
                   new TimeSpan(0, 5, 0),
                   async () => await _priceRepo.GetPriceListByCityId(cityId));
+      return details;
+    }
+
+    public async Task<CarPrice> GetPriceByCityVersion(int cityId, int versionId)
+    {
+      string cacheKey = string.Format(_key, "price-list", cityId);
+      var details = await _cacheProvider.GetFromCacheAsync<CarPrice>(cacheKey,
+                  new TimeSpan(0, 5, 0),
+                  async () => await _priceRepo.GetPriceByCityVersion(cityId, versionId));
       return details;
     }
 

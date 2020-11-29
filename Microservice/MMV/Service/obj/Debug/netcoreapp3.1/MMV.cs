@@ -26,25 +26,26 @@ namespace MMV.Service.ProtoClass {
           string.Concat(
             "CglNTVYucHJvdG8SA01NViIcCgxIZWxsb1JlcXVlc3QSDAoEbmFtZRgBIAEo",
             "CSIYCgdHcnBjSW50Eg0KBVZhbHVlGAEgASgFIigKDE1ha2VSZXNwb25zZRIK",
-            "CgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJIikKDU1vZGVsUmVzcG9uc2USCgoC",
-            "aWQYASABKAUSDAoEbmFtZRgCIAEoCSI8ChNWZXJzaW9uTGlzdFJlc3BvbnNl",
-            "EiUKB3ZlcnNpb24YASADKAsyFC5NTVYuVmVyc2lvblJlc3BvbnNlIjwKD1Zl",
-            "cnNpb25SZXNwb25zZRIKCgJpZBgBIAEoBRIPCgdtb2RlbElkGAIgASgFEgwK",
-            "BG5hbWUYAyABKAkiHQoKSGVsbG9SZXBseRIPCgdtZXNzYWdlGAEgASgJMpIC",
-            "CgpNTVZTZXJ2aWNlEi4KCFNheUhlbGxvEhEuTU1WLkhlbGxvUmVxdWVzdBoP",
-            "Lk1NVi5IZWxsb1JlcGx5EioKB0dldE1ha2USDC5NTVYuR3JwY0ludBoRLk1N",
-            "Vi5NYWtlUmVzcG9uc2USLAoIR2V0TW9kZWwSDC5NTVYuR3JwY0ludBoSLk1N",
-            "Vi5Nb2RlbFJlc3BvbnNlEjgKDkdldFZlcnNpb25MaXN0EgwuTU1WLkdycGNJ",
-            "bnQaGC5NTVYuVmVyc2lvbkxpc3RSZXNwb25zZRJAChpHZXREZWZhdWx0VmVy",
-            "c2lvbkJ5TW9kZWxJZBIMLk1NVi5HcnBjSW50GhQuTU1WLlZlcnNpb25SZXNw",
-            "b25zZUIZqgIWTU1WLlNlcnZpY2UuUHJvdG9DbGFzc2IGcHJvdG8z"));
+            "CgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJIjkKDU1vZGVsUmVzcG9uc2USCgoC",
+            "aWQYASABKAUSDgoGbWFrZUlkGAIgASgFEgwKBG5hbWUYAyABKAkiPAoTVmVy",
+            "c2lvbkxpc3RSZXNwb25zZRIlCgd2ZXJzaW9uGAEgAygLMhQuTU1WLlZlcnNp",
+            "b25SZXNwb25zZSI8Cg9WZXJzaW9uUmVzcG9uc2USCgoCaWQYASABKAUSDwoH",
+            "bW9kZWxJZBgCIAEoBRIMCgRuYW1lGAMgASgJIh0KCkhlbGxvUmVwbHkSDwoH",
+            "bWVzc2FnZRgBIAEoCTKSAgoKTU1WU2VydmljZRIuCghTYXlIZWxsbxIRLk1N",
+            "Vi5IZWxsb1JlcXVlc3QaDy5NTVYuSGVsbG9SZXBseRIqCgdHZXRNYWtlEgwu",
+            "TU1WLkdycGNJbnQaES5NTVYuTWFrZVJlc3BvbnNlEiwKCEdldE1vZGVsEgwu",
+            "TU1WLkdycGNJbnQaEi5NTVYuTW9kZWxSZXNwb25zZRI4Cg5HZXRWZXJzaW9u",
+            "TGlzdBIMLk1NVi5HcnBjSW50GhguTU1WLlZlcnNpb25MaXN0UmVzcG9uc2US",
+            "QAoaR2V0RGVmYXVsdFZlcnNpb25CeU1vZGVsSWQSDC5NTVYuR3JwY0ludBoU",
+            "Lk1NVi5WZXJzaW9uUmVzcG9uc2VCGaoCFk1NVi5TZXJ2aWNlLlByb3RvQ2xh",
+            "c3NiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::MMV.Service.ProtoClass.HelloRequest), global::MMV.Service.ProtoClass.HelloRequest.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MMV.Service.ProtoClass.GrpcInt), global::MMV.Service.ProtoClass.GrpcInt.Parser, new[]{ "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MMV.Service.ProtoClass.MakeResponse), global::MMV.Service.ProtoClass.MakeResponse.Parser, new[]{ "Id", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MMV.Service.ProtoClass.ModelResponse), global::MMV.Service.ProtoClass.ModelResponse.Parser, new[]{ "Id", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MMV.Service.ProtoClass.ModelResponse), global::MMV.Service.ProtoClass.ModelResponse.Parser, new[]{ "Id", "MakeId", "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MMV.Service.ProtoClass.VersionListResponse), global::MMV.Service.ProtoClass.VersionListResponse.Parser, new[]{ "Version" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MMV.Service.ProtoClass.VersionResponse), global::MMV.Service.ProtoClass.VersionResponse.Parser, new[]{ "Id", "ModelId", "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MMV.Service.ProtoClass.HelloReply), global::MMV.Service.ProtoClass.HelloReply.Parser, new[]{ "Message" }, null, null, null, null)
@@ -499,6 +500,7 @@ namespace MMV.Service.ProtoClass {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelResponse(ModelResponse other) : this() {
       id_ = other.id_;
+      makeId_ = other.makeId_;
       name_ = other.name_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -519,8 +521,19 @@ namespace MMV.Service.ProtoClass {
       }
     }
 
+    /// <summary>Field number for the "makeId" field.</summary>
+    public const int MakeIdFieldNumber = 2;
+    private int makeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MakeId {
+      get { return makeId_; }
+      set {
+        makeId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 2;
+    public const int NameFieldNumber = 3;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -544,6 +557,7 @@ namespace MMV.Service.ProtoClass {
         return true;
       }
       if (Id != other.Id) return false;
+      if (MakeId != other.MakeId) return false;
       if (Name != other.Name) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -552,6 +566,7 @@ namespace MMV.Service.ProtoClass {
     public override int GetHashCode() {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
+      if (MakeId != 0) hash ^= MakeId.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -570,8 +585,12 @@ namespace MMV.Service.ProtoClass {
         output.WriteRawTag(8);
         output.WriteInt32(Id);
       }
+      if (MakeId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(MakeId);
+      }
       if (Name.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(Name);
       }
       if (_unknownFields != null) {
@@ -584,6 +603,9 @@ namespace MMV.Service.ProtoClass {
       int size = 0;
       if (Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (MakeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MakeId);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
@@ -601,6 +623,9 @@ namespace MMV.Service.ProtoClass {
       }
       if (other.Id != 0) {
         Id = other.Id;
+      }
+      if (other.MakeId != 0) {
+        MakeId = other.MakeId;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -620,7 +645,11 @@ namespace MMV.Service.ProtoClass {
             Id = input.ReadInt32();
             break;
           }
-          case 18: {
+          case 16: {
+            MakeId = input.ReadInt32();
+            break;
+          }
+          case 26: {
             Name = input.ReadString();
             break;
           }

@@ -17,7 +17,7 @@ import {
   changeSelectedPrice,
   changeCityList,
   changeVersionList,
-  changePriceVersionCityList,
+  changePriceDetailList,
 } from "../actions/Actions";
 
 // Props data
@@ -48,17 +48,22 @@ const listOfLinks = [
   },
 ];
 
+const emiDetails = {
+  cost: "10,716",
+  duration: "5 years",
+}
+
 const Content = (props) => {
   const [data, setData] = useState({});
   const [carName, setCarName] = useState("");
   const [carImage, setCarImage] = useState("");
   const [reviewDetails, setReviewDetails] = useState({});
-  const [emiDetails, setEmiDetails] = useState({});
+  const modelId = props?.match?.params?.modelId;
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios.get("http://localhost:5000/model/info/4");
+        const response = await axios.get("http://localhost:5000/api/model/" +modelId);
         console.log(response.data);
         if (response.data) {
           setData(response.data);
@@ -73,14 +78,13 @@ const Content = (props) => {
     if (!(Object.keys(data).length === 0 && data.constructor === Object)) {
       
       // setting data in store.
-      props.changeCityList(data.citySet);
-      props.changeVersionList(data.versionSet);
-      props.changeSelectedCity(data?.citySet[0]?.name);
-      props.changeSelectedVersion(data?.versionSet[0]?.name);
-      // props.changePriceVersionCityList(data.priceDetailsList);
-      // props.changeSelectedPrice(data.versionSet[0] , data.citySet[0]);
+      props.changeCityList(data?.citySet);
+      props.changeVersionList(data?.versionSet);
+      // props.changeSelectedCity(data?.citySet[0]); -----------------
+      props.changeSelectedVersion(data?.versionSet[0]);
+      props.changePriceDetailList(data?.priceDetailList);
+      props.changeSelectedPrice();
       // change state data.
-      setEmiDetails(data.emiDetail);
       setReviewDetails({
         rating: data.reviewDetail.rating,
         totalReviewCount: data.reviewDetail.count
@@ -110,5 +114,5 @@ export default connect(null, {
   changeSelectedPrice,
   changeCityList,
   changeVersionList,
-  changePriceVersionCityList,
+  changePriceDetailList,
 })(Content);

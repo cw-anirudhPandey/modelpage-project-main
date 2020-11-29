@@ -45,7 +45,7 @@ describe("Test Selection Reducer with default states", () => {
     ];
     expect(
       SelectionReducer(undefined, {
-        type: "CHANGE_PRICE_VERSION_CITY_LIST",
+        type: "CHANGE_PRICE_DETAIL_LIST",
         data: priceDetailsList,
       }).priceVersionCityList
     ).toEqual(priceDetailsList);

@@ -51,6 +51,7 @@ namespace MMV.DataAccess
         {
           string query = @"Select 
                             carModelId as Id, 
+                            carMakeId as MakeId,
                             carModelName as ModelName
                         From 
                             _carModel 

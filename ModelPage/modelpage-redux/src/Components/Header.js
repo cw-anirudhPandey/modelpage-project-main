@@ -6,7 +6,7 @@ import "../css/styles.css";
 const Header = () => {
   return (
     <div className="Rectangle">
-      <h1 style={{ display: "inline-block" }}>
+      <h1 className="header-title">
         <Image
           url={
             "https://pbs.twimg.com/profile_images/1103195268177117184/pk2eYxu4.png"
