@@ -12,17 +12,8 @@ namespace Location.Service.ProtoClass {
   {
     static readonly string __ServiceName = "Location.LocationService";
 
-    static readonly grpc::Marshaller<global::Location.Service.ProtoClass.HelloRequest> __Marshaller_Location_HelloRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Location.Service.ProtoClass.HelloRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Location.Service.ProtoClass.HelloReply> __Marshaller_Location_HelloReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Location.Service.ProtoClass.HelloReply.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Location.Service.ProtoClass.EmptyParam> __Marshaller_Location_EmptyParam = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Location.Service.ProtoClass.EmptyParam.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Location.Service.ProtoClass.CityListResponse> __Marshaller_Location_CityListResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Location.Service.ProtoClass.CityListResponse.Parser.ParseFrom);
-
-    static readonly grpc::Method<global::Location.Service.ProtoClass.HelloRequest, global::Location.Service.ProtoClass.HelloReply> __Method_SayHello = new grpc::Method<global::Location.Service.ProtoClass.HelloRequest, global::Location.Service.ProtoClass.HelloReply>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "SayHello",
-        __Marshaller_Location_HelloRequest,
-        __Marshaller_Location_HelloReply);
 
     static readonly grpc::Method<global::Location.Service.ProtoClass.EmptyParam, global::Location.Service.ProtoClass.CityListResponse> __Method_GetAllCities = new grpc::Method<global::Location.Service.ProtoClass.EmptyParam, global::Location.Service.ProtoClass.CityListResponse>(
         grpc::MethodType.Unary,
@@ -41,17 +32,6 @@ namespace Location.Service.ProtoClass {
     [grpc::BindServiceMethod(typeof(LocationService), "BindService")]
     public abstract partial class LocationServiceBase
     {
-      /// <summary>
-      /// Sends a greeting
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::Location.Service.ProtoClass.HelloReply> SayHello(global::Location.Service.ProtoClass.HelloRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
       public virtual global::System.Threading.Tasks.Task<global::Location.Service.ProtoClass.CityListResponse> GetAllCities(global::Location.Service.ProtoClass.EmptyParam request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -64,7 +44,6 @@ namespace Location.Service.ProtoClass {
     public static grpc::ServerServiceDefinition BindService(LocationServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_SayHello, serviceImpl.SayHello)
           .AddMethod(__Method_GetAllCities, serviceImpl.GetAllCities).Build();
     }
 
@@ -74,7 +53,6 @@ namespace Location.Service.ProtoClass {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, LocationServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Location.Service.ProtoClass.HelloRequest, global::Location.Service.ProtoClass.HelloReply>(serviceImpl.SayHello));
       serviceBinder.AddMethod(__Method_GetAllCities, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Location.Service.ProtoClass.EmptyParam, global::Location.Service.ProtoClass.CityListResponse>(serviceImpl.GetAllCities));
     }
 

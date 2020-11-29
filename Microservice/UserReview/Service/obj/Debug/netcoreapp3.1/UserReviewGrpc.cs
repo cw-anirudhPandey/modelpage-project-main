@@ -12,17 +12,8 @@ namespace UserReview.Service.ProtoClass {
   {
     static readonly string __ServiceName = "UserReview.UserReviewService";
 
-    static readonly grpc::Marshaller<global::UserReview.Service.ProtoClass.HelloRequest> __Marshaller_UserReview_HelloRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::UserReview.Service.ProtoClass.HelloRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::UserReview.Service.ProtoClass.HelloReply> __Marshaller_UserReview_HelloReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::UserReview.Service.ProtoClass.HelloReply.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::UserReview.Service.ProtoClass.GrpcInt> __Marshaller_UserReview_GrpcInt = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::UserReview.Service.ProtoClass.GrpcInt.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::UserReview.Service.ProtoClass.ReviewResponse> __Marshaller_UserReview_ReviewResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::UserReview.Service.ProtoClass.ReviewResponse.Parser.ParseFrom);
-
-    static readonly grpc::Method<global::UserReview.Service.ProtoClass.HelloRequest, global::UserReview.Service.ProtoClass.HelloReply> __Method_SayHello = new grpc::Method<global::UserReview.Service.ProtoClass.HelloRequest, global::UserReview.Service.ProtoClass.HelloReply>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "SayHello",
-        __Marshaller_UserReview_HelloRequest,
-        __Marshaller_UserReview_HelloReply);
 
     static readonly grpc::Method<global::UserReview.Service.ProtoClass.GrpcInt, global::UserReview.Service.ProtoClass.ReviewResponse> __Method_GetReview = new grpc::Method<global::UserReview.Service.ProtoClass.GrpcInt, global::UserReview.Service.ProtoClass.ReviewResponse>(
         grpc::MethodType.Unary,
@@ -41,17 +32,6 @@ namespace UserReview.Service.ProtoClass {
     [grpc::BindServiceMethod(typeof(UserReviewService), "BindService")]
     public abstract partial class UserReviewServiceBase
     {
-      /// <summary>
-      /// Sends a greeting
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::UserReview.Service.ProtoClass.HelloReply> SayHello(global::UserReview.Service.ProtoClass.HelloRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
       public virtual global::System.Threading.Tasks.Task<global::UserReview.Service.ProtoClass.ReviewResponse> GetReview(global::UserReview.Service.ProtoClass.GrpcInt request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -64,7 +44,6 @@ namespace UserReview.Service.ProtoClass {
     public static grpc::ServerServiceDefinition BindService(UserReviewServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_SayHello, serviceImpl.SayHello)
           .AddMethod(__Method_GetReview, serviceImpl.GetReview).Build();
     }
 
@@ -74,7 +53,6 @@ namespace UserReview.Service.ProtoClass {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, UserReviewServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserReview.Service.ProtoClass.HelloRequest, global::UserReview.Service.ProtoClass.HelloReply>(serviceImpl.SayHello));
       serviceBinder.AddMethod(__Method_GetReview, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserReview.Service.ProtoClass.GrpcInt, global::UserReview.Service.ProtoClass.ReviewResponse>(serviceImpl.GetReview));
     }
 

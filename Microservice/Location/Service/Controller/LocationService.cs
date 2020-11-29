@@ -13,20 +13,10 @@ namespace Location.Service.Controller
 {
   public class LocationService : Location.Service.ProtoClass.LocationService.LocationServiceBase
   {
-    private readonly ILogger<LocationService> _logger;
     private readonly ILocationLogic _locationLogic;
-    public LocationService(ILogger<LocationService> logger, ILocationLogic locationLogic)
+    public LocationService(ILocationLogic locationLogic)
     {
-      _logger = logger;
       _locationLogic = locationLogic;
-    }
-
-    public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
-    {
-      return Task.FromResult(new HelloReply
-      {
-        Message = "Hello " + request.Name
-      });
     }
 
     public override async Task<CityListResponse> GetAllCities(EmptyParam request, ServerCallContext context)

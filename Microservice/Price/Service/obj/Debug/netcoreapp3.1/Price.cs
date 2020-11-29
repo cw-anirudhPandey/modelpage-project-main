@@ -24,169 +24,32 @@ namespace Price.Service.ProtoClass {
     static PriceReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgtQcmljZS5wcm90bxIFUHJpY2UiHAoMSGVsbG9SZXF1ZXN0EgwKBG5hbWUY",
-            "ASABKAkiGAoHR3JwY0ludBINCgV2YWx1ZRgBIAEoBSIvCgpHcnBjVHdvSW50",
-            "Eg4KBmNpdHlJZBgBIAEoBRIRCgl2ZXJzaW9uSWQYAiABKAUiOAoRUHJpY2VM",
-            "aXN0UmVzcG9uc2USIwoFcHJpY2UYASADKAsyFC5QcmljZS5QcmljZVJlc3Bv",
-            "bnNlIk0KDVByaWNlUmVzcG9uc2USCgoCaWQYASABKAUSEQoJdmVyc2lvbklk",
-            "GAIgASgFEg4KBmNpdHlJZBgDIAEoBRINCgV2YWx1ZRgEIAEoCSIbCgpHcnBj",
-            "U3RyaW5nEg0KBXZhbHVlGAEgASgJIh0KCkhlbGxvUmVwbHkSDwoHbWVzc2Fn",
-            "ZRgBIAEoCTKDAgoMUHJpY2VTZXJ2aWNlEjIKCFNheUhlbGxvEhMuUHJpY2Uu",
-            "SGVsbG9SZXF1ZXN0GhEuUHJpY2UuSGVsbG9SZXBseRJAChRHZXRQcmljZUxp",
-            "c3RCeUNpdHlJZBIOLlByaWNlLkdycGNJbnQaGC5QcmljZS5QcmljZUxpc3RS",
-            "ZXNwb25zZRJAChVHZXRQcmljZUJ5Q2l0eVZlcnNpb24SES5QcmljZS5HcnBj",
-            "VHdvSW50GhQuUHJpY2UuUHJpY2VSZXNwb25zZRI7ChZHZXRBdmdQcmljZUJ5",
-            "VmVyc2lvbklkEg4uUHJpY2UuR3JwY0ludBoRLlByaWNlLkdycGNTdHJpbmdC",
-            "G6oCGFByaWNlLlNlcnZpY2UuUHJvdG9DbGFzc2IGcHJvdG8z"));
+            "CgtQcmljZS5wcm90bxIFUHJpY2UiGAoHR3JwY0ludBINCgV2YWx1ZRgBIAEo",
+            "BSIvCgpHcnBjVHdvSW50Eg4KBmNpdHlJZBgBIAEoBRIRCgl2ZXJzaW9uSWQY",
+            "AiABKAUiOAoRUHJpY2VMaXN0UmVzcG9uc2USIwoFcHJpY2UYASADKAsyFC5Q",
+            "cmljZS5QcmljZVJlc3BvbnNlIk0KDVByaWNlUmVzcG9uc2USCgoCaWQYASAB",
+            "KAUSEQoJdmVyc2lvbklkGAIgASgFEg4KBmNpdHlJZBgDIAEoBRINCgV2YWx1",
+            "ZRgEIAEoCSIbCgpHcnBjU3RyaW5nEg0KBXZhbHVlGAEgASgJMs8BCgxQcmlj",
+            "ZVNlcnZpY2USQAoUR2V0UHJpY2VMaXN0QnlDaXR5SWQSDi5QcmljZS5HcnBj",
+            "SW50GhguUHJpY2UuUHJpY2VMaXN0UmVzcG9uc2USQAoVR2V0UHJpY2VCeUNp",
+            "dHlWZXJzaW9uEhEuUHJpY2UuR3JwY1R3b0ludBoULlByaWNlLlByaWNlUmVz",
+            "cG9uc2USOwoWR2V0QXZnUHJpY2VCeVZlcnNpb25JZBIOLlByaWNlLkdycGNJ",
+            "bnQaES5QcmljZS5HcnBjU3RyaW5nQhuqAhhQcmljZS5TZXJ2aWNlLlByb3Rv",
+            "Q2xhc3NiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.HelloRequest), global::Price.Service.ProtoClass.HelloRequest.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.GrpcInt), global::Price.Service.ProtoClass.GrpcInt.Parser, new[]{ "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.GrpcTwoInt), global::Price.Service.ProtoClass.GrpcTwoInt.Parser, new[]{ "CityId", "VersionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.PriceListResponse), global::Price.Service.ProtoClass.PriceListResponse.Parser, new[]{ "Price" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.PriceResponse), global::Price.Service.ProtoClass.PriceResponse.Parser, new[]{ "Id", "VersionId", "CityId", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.GrpcString), global::Price.Service.ProtoClass.GrpcString.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.HelloReply), global::Price.Service.ProtoClass.HelloReply.Parser, new[]{ "Message" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Price.Service.ProtoClass.GrpcString), global::Price.Service.ProtoClass.GrpcString.Parser, new[]{ "Value" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  /// <summary>
-  ///=========================Request-=============================
-  /// The request message containing the user's name.
-  /// </summary>
-  public sealed partial class HelloRequest : pb::IMessage<HelloRequest> {
-    private static readonly pb::MessageParser<HelloRequest> _parser = new pb::MessageParser<HelloRequest>(() => new HelloRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<HelloRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[0]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloRequest(HelloRequest other) : this() {
-      name_ = other.name_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloRequest Clone() {
-      return new HelloRequest(this);
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as HelloRequest);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(HelloRequest other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Name != other.Name) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(HelloRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Name = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   public sealed partial class GrpcInt : pb::IMessage<GrpcInt> {
     private static readonly pb::MessageParser<GrpcInt> _parser = new pb::MessageParser<GrpcInt>(() => new GrpcInt());
     private pb::UnknownFieldSet _unknownFields;
@@ -195,7 +58,7 @@ namespace Price.Service.ProtoClass {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -324,7 +187,7 @@ namespace Price.Service.ProtoClass {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -481,7 +344,7 @@ namespace Price.Service.ProtoClass {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -602,7 +465,7 @@ namespace Price.Service.ProtoClass {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -815,7 +678,7 @@ namespace Price.Service.ProtoClass {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -928,138 +791,6 @@ namespace Price.Service.ProtoClass {
             break;
           case 10: {
             Value = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
-  /// The response message containing the greetings.
-  /// </summary>
-  public sealed partial class HelloReply : pb::IMessage<HelloReply> {
-    private static readonly pb::MessageParser<HelloReply> _parser = new pb::MessageParser<HelloReply>(() => new HelloReply());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<HelloReply> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Price.Service.ProtoClass.PriceReflection.Descriptor.MessageTypes[6]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloReply() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloReply(HelloReply other) : this() {
-      message_ = other.message_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloReply Clone() {
-      return new HelloReply(this);
-    }
-
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 1;
-    private string message_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Message {
-      get { return message_; }
-      set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as HelloReply);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(HelloReply other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Message != other.Message) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Message.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Message);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(HelloReply other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Message = input.ReadString();
             break;
           }
         }

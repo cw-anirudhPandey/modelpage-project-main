@@ -5,18 +5,10 @@ option csharp_namespace = "Image.Service.ProtoClass";
 package Image;
 
 service ImageService {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply);
-
   rpc GetImage (GrpcInt) returns (ImageResponse);
 }
 
 //=========================Request-=============================
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
-
 message GrpcInt
 {
   int32 Value = 1;
@@ -30,8 +22,4 @@ message ImageResponse {
   string imageUrl = 3;
 }
 
-// The response message containing the greetings.
-message HelloReply {
-  string message = 1;
-}
 

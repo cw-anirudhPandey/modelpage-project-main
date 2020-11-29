@@ -5,19 +5,12 @@ option csharp_namespace = "Price.Service.ProtoClass";
 package Price;
 
 service PriceService {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply);
-
   rpc GetPriceListByCityId (GrpcInt) returns (PriceListResponse);
   rpc GetPriceByCityVersion (GrpcTwoInt) returns (PriceResponse);
   rpc GetAvgPriceByVersionId (GrpcInt) returns (GrpcString);
 }
 
 //=========================Request-=============================
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
 
 message GrpcInt
 {
@@ -45,11 +38,5 @@ message PriceResponse {
 
 message GrpcString {
   string value = 1;
-}
-
-
-// The response message containing the greetings.
-message HelloReply {
-  string message = 1;
 }
 

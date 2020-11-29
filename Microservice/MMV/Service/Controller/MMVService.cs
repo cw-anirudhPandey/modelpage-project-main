@@ -12,48 +12,40 @@ namespace MMV.Service.Controller
 {
   public class MMVService : MMV.Service.ProtoClass.MMVService.MMVServiceBase
   {
-    private readonly ILogger<MMVService> _logger;
     private readonly ICarMakeLogic _carMakeLogic;
     private readonly ICarModelLogic _carModelLogic;
     private readonly ICarVersionLogic _carVersionLogic;
 
-    public MMVService(ILogger<MMVService> logger, ICarMakeLogic carMakeLogic, ICarModelLogic carModelLogic,
+    public MMVService(ICarMakeLogic carMakeLogic, ICarModelLogic carModelLogic,
        ICarVersionLogic carVersionLogic)
     {
-      _logger = logger;
       _carMakeLogic = carMakeLogic;
       _carModelLogic = carModelLogic;
       _carVersionLogic = carVersionLogic;
     }
 
-    public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
-    {
-      return Task.FromResult(new HelloReply
-      {
-        Message = "Hello " + request.Name
-      });
-    }
-
-
     public override async Task<MakeResponse> GetMake(GrpcInt request, ServerCallContext context)
     {
+      MakeResponse result = new MakeResponse();
       var makeDetails = await _carMakeLogic.GetMake(request.Value);
-      return new MakeResponse
-      {
-        Id = makeDetails.Id,
-        Name = makeDetails.MakeName
-      };
+      if(makeDetails != null) {
+        result.Id = makeDetails.Id;
+        result.Name = makeDetails.MakeName;
+      }
+      return result;
     }
 
     public override async Task<ModelResponse> GetModel(GrpcInt request, ServerCallContext context)
     {
+      ModelResponse result = new ModelResponse();
       var modelDetails = await _carModelLogic.GetModel(request.Value);
-      return new ModelResponse
+      if (modelDetails != null)
       {
-        Id = modelDetails.Id,
-        MakeId = modelDetails.MakeId,
-        Name = modelDetails.ModelName
-      };
+        result.Id = modelDetails.Id;
+        result.MakeId = modelDetails.MakeId;
+        result.Name = modelDetails.ModelName;
+      }
+      return result;
     }
 
 
@@ -80,13 +72,15 @@ namespace MMV.Service.Controller
 
     public override async Task<VersionResponse> GetDefaultVersionByModelId(GrpcInt request, ServerCallContext context)
     {
+      VersionResponse result = new VersionResponse();
       var details = await _carVersionLogic.GetDefaultVersionByModelId(request.Value);
-      return new VersionResponse()
+      if (details != null)
       {
-        Id = details.Id,
-        ModelId = details.ModelId,
-        Name = details.Name
-      };
+        result.Id = details.Id;
+        result.ModelId = details.ModelId;
+        result.Name = details.Name;
+      }
+      return result;
     }
   }
 }

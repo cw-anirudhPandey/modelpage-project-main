@@ -13,31 +13,23 @@ namespace Image.Service.Controller
 {
   public class ImageService : Image.Service.ProtoClass.ImageService.ImageServiceBase
   {
-    private readonly ILogger<ImageService> _logger;
     private readonly IImageLogic _imageLogic;
-    public ImageService(ILogger<ImageService> logger, IImageLogic imageLogic)
+    public ImageService(IImageLogic imageLogic)
     {
-      _logger = logger;
       _imageLogic = imageLogic;
-    }
-
-    public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
-    {
-      return Task.FromResult(new HelloReply
-      {
-        Message = "Hello " + request.Name
-      });
     }
 
     public override async Task<ImageResponse> GetImage(GrpcInt request, ServerCallContext context)
     {
+      ImageResponse result = new ImageResponse();
       var imageDetails = await _imageLogic.GetImage(request.Value);
-      return new ImageResponse
+      if (imageDetails != null)
       {
-        Id = imageDetails.Id,
-        ModelId = imageDetails.ModelId,
-        ImageUrl = imageDetails.ImageUrl
-      };
+        result.Id = imageDetails.Id;
+        result.ModelId = imageDetails.ModelId;
+        result.ImageUrl = imageDetails.ImageUrl;
+      }
+      return result;
     }
 
   }

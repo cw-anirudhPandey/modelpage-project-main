@@ -11,31 +11,22 @@ namespace UserReview.Service.Controller
 {
   public class UserReviewService : UserReview.Service.ProtoClass.UserReviewService.UserReviewServiceBase
   {
-    private readonly ILogger<UserReviewService> _logger;
     private readonly IUserReviewLogic _userReviewLogic;
-    public UserReviewService(ILogger<UserReviewService> logger, IUserReviewLogic userReviewLogic)
+    public UserReviewService(IUserReviewLogic userReviewLogic)
     {
-      _logger = logger;
       _userReviewLogic = userReviewLogic;
-    }
-
-    public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
-    {
-      return Task.FromResult(new HelloReply
-      {
-        Message = "Hello " + request.Name
-      });
     }
 
     public override async Task<ReviewResponse> GetReview(GrpcInt request, ServerCallContext context)
     {
+      ReviewResponse result = new ReviewResponse();
       var reviewDetails = await _userReviewLogic.GetReviewDetails(request.Value);
-      return new ReviewResponse
-      {
-        ModelId = reviewDetails.ModelId,
-        Rating = reviewDetails.Rating,
-        Count = reviewDetails.Count
-      };
+      if(reviewDetails != null) {
+        result.ModelId = reviewDetails.ModelId;
+        result.Rating = reviewDetails.Rating;
+        result.Count = reviewDetails.Count;
+      }
+      return result;
     }
   }
 }

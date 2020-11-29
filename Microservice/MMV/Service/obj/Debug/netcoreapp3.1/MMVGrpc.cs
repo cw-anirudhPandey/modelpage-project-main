@@ -12,20 +12,11 @@ namespace MMV.Service.ProtoClass {
   {
     static readonly string __ServiceName = "MMV.MMVService";
 
-    static readonly grpc::Marshaller<global::MMV.Service.ProtoClass.HelloRequest> __Marshaller_MMV_HelloRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::MMV.Service.ProtoClass.HelloRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::MMV.Service.ProtoClass.HelloReply> __Marshaller_MMV_HelloReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::MMV.Service.ProtoClass.HelloReply.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::MMV.Service.ProtoClass.GrpcInt> __Marshaller_MMV_GrpcInt = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::MMV.Service.ProtoClass.GrpcInt.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::MMV.Service.ProtoClass.MakeResponse> __Marshaller_MMV_MakeResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::MMV.Service.ProtoClass.MakeResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::MMV.Service.ProtoClass.ModelResponse> __Marshaller_MMV_ModelResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::MMV.Service.ProtoClass.ModelResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::MMV.Service.ProtoClass.VersionListResponse> __Marshaller_MMV_VersionListResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::MMV.Service.ProtoClass.VersionListResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::MMV.Service.ProtoClass.VersionResponse> __Marshaller_MMV_VersionResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::MMV.Service.ProtoClass.VersionResponse.Parser.ParseFrom);
-
-    static readonly grpc::Method<global::MMV.Service.ProtoClass.HelloRequest, global::MMV.Service.ProtoClass.HelloReply> __Method_SayHello = new grpc::Method<global::MMV.Service.ProtoClass.HelloRequest, global::MMV.Service.ProtoClass.HelloReply>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "SayHello",
-        __Marshaller_MMV_HelloRequest,
-        __Marshaller_MMV_HelloReply);
 
     static readonly grpc::Method<global::MMV.Service.ProtoClass.GrpcInt, global::MMV.Service.ProtoClass.MakeResponse> __Method_GetMake = new grpc::Method<global::MMV.Service.ProtoClass.GrpcInt, global::MMV.Service.ProtoClass.MakeResponse>(
         grpc::MethodType.Unary,
@@ -65,17 +56,6 @@ namespace MMV.Service.ProtoClass {
     [grpc::BindServiceMethod(typeof(MMVService), "BindService")]
     public abstract partial class MMVServiceBase
     {
-      /// <summary>
-      /// Sends a greeting
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::MMV.Service.ProtoClass.HelloReply> SayHello(global::MMV.Service.ProtoClass.HelloRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
       public virtual global::System.Threading.Tasks.Task<global::MMV.Service.ProtoClass.MakeResponse> GetMake(global::MMV.Service.ProtoClass.GrpcInt request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -103,7 +83,6 @@ namespace MMV.Service.ProtoClass {
     public static grpc::ServerServiceDefinition BindService(MMVServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_SayHello, serviceImpl.SayHello)
           .AddMethod(__Method_GetMake, serviceImpl.GetMake)
           .AddMethod(__Method_GetModel, serviceImpl.GetModel)
           .AddMethod(__Method_GetVersionList, serviceImpl.GetVersionList)
@@ -116,7 +95,6 @@ namespace MMV.Service.ProtoClass {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, MMVServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MMV.Service.ProtoClass.HelloRequest, global::MMV.Service.ProtoClass.HelloReply>(serviceImpl.SayHello));
       serviceBinder.AddMethod(__Method_GetMake, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MMV.Service.ProtoClass.GrpcInt, global::MMV.Service.ProtoClass.MakeResponse>(serviceImpl.GetMake));
       serviceBinder.AddMethod(__Method_GetModel, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MMV.Service.ProtoClass.GrpcInt, global::MMV.Service.ProtoClass.ModelResponse>(serviceImpl.GetModel));
       serviceBinder.AddMethod(__Method_GetVersionList, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MMV.Service.ProtoClass.GrpcInt, global::MMV.Service.ProtoClass.VersionListResponse>(serviceImpl.GetVersionList));

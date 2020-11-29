@@ -13,20 +13,10 @@ namespace Price.Service.Controller
 {
   public class PriceService : Price.Service.ProtoClass.PriceService.PriceServiceBase
   {
-    private readonly ILogger<PriceService> _logger;
     private readonly IPriceLogic _priceLogic;
-    public PriceService(ILogger<PriceService> logger, IPriceLogic priceLogic)
+    public PriceService(IPriceLogic priceLogic)
     {
-      _logger = logger;
       _priceLogic = priceLogic;
-    }
-
-    public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
-    {
-      return Task.FromResult(new HelloReply
-      {
-        Message = "Hello " + request.Name
-      });
     }
 
     public override async Task<PriceListResponse> GetPriceListByCityId(GrpcInt request, ServerCallContext context)
@@ -53,23 +43,27 @@ namespace Price.Service.Controller
 
     public override async Task<PriceResponse> GetPriceByCityVersion(GrpcTwoInt request, ServerCallContext context)
     {
+      PriceResponse result = new PriceResponse();
       var price = await _priceLogic.GetPriceByCityVersion(request.CityId, request.VersionId);
-      return new PriceResponse()
+      if (price != null)
       {
-        Id = price.Id,
-        VersionId = price.VersionId,
-        CityId = price.CityId,
-        Value = price.Value
-      };
+        result.Id = price.Id;
+        result.VersionId = price.VersionId;
+        result.CityId = price.CityId;
+        result.Value = price.Value;
+      }
+      return result;
     }
 
     public override async Task<GrpcString> GetAvgPriceByVersionId(GrpcInt request, ServerCallContext context)
     {
+      GrpcString result = new GrpcString();
       var details = await _priceLogic.GetAvgPriceByVersionId(request.Value);
-      return new GrpcString()
+      if (details != null)
       {
-        Value = details.Value
-      };
+        result.Value = details.Value;
+      }
+      return result;
     }
 
 
