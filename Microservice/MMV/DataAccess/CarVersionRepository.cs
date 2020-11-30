@@ -22,11 +22,10 @@ namespace MMV.DataAccess
     public async Task<IEnumerable<CarVersion>> GetVersionList(int modelId)
     {
       var versionList = Enumerable.Empty<CarVersion>();
-      try
+
+      using (IDbConnection conn = new MySqlConnection(_config.GetConnectionString("modelPageDBString")))
       {
-        using (IDbConnection conn = new MySqlConnection(_config.GetConnectionString("modelPageDBString")))
-        {
-          string query = @"SELECT 
+        string query = @"SELECT 
                             carVersionId as Id,
                             carModelId as ModelId,
                             carVersionName as Name
@@ -34,24 +33,19 @@ namespace MMV.DataAccess
                             _carVersion
                         WHERE
                             carModelId = @ModelId;";
-          versionList = (await conn.QueryAsync<CarVersion>(query, new { ModelId = modelId })).ToList();
-        }
+        versionList = (await conn.QueryAsync<CarVersion>(query, new { ModelId = modelId })).ToList();
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine(ex.Message + "GetVersionList method in DAL for modelId = " + modelId);
-      }
+
       return versionList;
     }
 
     public async Task<CarVersion> GetDefaultVersionByModelId(int modelId)
     {
       var versionDetail = new CarVersion();
-      try
+
+      using (IDbConnection conn = new MySqlConnection(_config.GetConnectionString("modelPageDBString")))
       {
-        using (IDbConnection conn = new MySqlConnection(_config.GetConnectionString("modelPageDBString")))
-        {
-          string query = @"SELECT
+        string query = @"SELECT
                           carVersionId as Id,
                           carModelId as ModelId,
                           carVersionName as Name
@@ -59,13 +53,9 @@ namespace MMV.DataAccess
                             _carVersion
                         WHERE
                             carModelId = @ModelId;";
-          versionDetail = (await conn.QueryAsync<CarVersion>(query, new { ModelId = modelId })).FirstOrDefault();
-        }
+        versionDetail = (await conn.QueryAsync<CarVersion>(query, new { ModelId = modelId })).FirstOrDefault();
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine(ex.Message + "GetDefaultVersionByModelId method in DAL for modelId = " + modelId);
-      }
+
       return versionDetail;
     }
   }

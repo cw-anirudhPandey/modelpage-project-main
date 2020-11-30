@@ -12,7 +12,6 @@ namespace ModelPage.Entities
     public Review ReviewDetail {get; set;}
     public IEnumerable<CarCity> CitySet { get; set; }
     public IEnumerable<CarVersion> VersionSet { get; set; }
-    public List<CarPrice> PriceDetailList { get; set; }
-    public Emi EmiDetail { get; set; }
+    public IEnumerable<CarPrice> PriceDetailList { get; set; }
   }
 }

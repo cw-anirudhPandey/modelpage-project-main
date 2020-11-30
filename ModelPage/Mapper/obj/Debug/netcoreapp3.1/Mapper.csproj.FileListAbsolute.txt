@@ -1,0 +1,14 @@
+D:\modelpage-project-main\ModelPage\Mapper\bin\Debug\netcoreapp3.1\Mapper.deps.json
+D:\modelpage-project-main\ModelPage\Mapper\bin\Debug\netcoreapp3.1\Mapper.dll
+D:\modelpage-project-main\ModelPage\Mapper\bin\Debug\netcoreapp3.1\Mapper.pdb
+D:\modelpage-project-main\ModelPage\Mapper\bin\Debug\netcoreapp3.1\DTO.dll
+D:\modelpage-project-main\ModelPage\Mapper\bin\Debug\netcoreapp3.1\Entities.dll
+D:\modelpage-project-main\ModelPage\Mapper\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\modelpage-project-main\ModelPage\Mapper\bin\Debug\netcoreapp3.1\DTO.pdb
+D:\modelpage-project-main\ModelPage\Mapper\obj\Debug\netcoreapp3.1\Mapper.csprojAssemblyReference.cache
+D:\modelpage-project-main\ModelPage\Mapper\obj\Debug\netcoreapp3.1\Mapper.AssemblyInfoInputs.cache
+D:\modelpage-project-main\ModelPage\Mapper\obj\Debug\netcoreapp3.1\Mapper.AssemblyInfo.cs
+D:\modelpage-project-main\ModelPage\Mapper\obj\Debug\netcoreapp3.1\Mapper.csproj.CoreCompileInputs.cache
+D:\modelpage-project-main\ModelPage\Mapper\obj\Debug\netcoreapp3.1\Mapper.csproj.CopyComplete
+D:\modelpage-project-main\ModelPage\Mapper\obj\Debug\netcoreapp3.1\Mapper.dll
+D:\modelpage-project-main\ModelPage\Mapper\obj\Debug\netcoreapp3.1\Mapper.pdb

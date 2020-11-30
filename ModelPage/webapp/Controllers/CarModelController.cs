@@ -3,10 +3,8 @@ using AEPLCore.Logging;
 using System;
 using System.Threading.Tasks;
 using ModelPage.Business;
-using ModelPage.DTO;
-using ModelPage.Entities;
-using System.Collections;
-using System.Collections.Generic;
+using ModelPage.Mapper;
+using Microsoft.AspNetCore.Http;
 
 namespace webapp.Controllers
 {
@@ -22,54 +20,49 @@ namespace webapp.Controllers
 
     [HttpGet]
     [Route("api/model/{id}")]
-    public async Task<CarModelDetails> Get(int id)
+    public async Task<IActionResult> GetModelPageData(int id)
     {
       try
       {
-        var details = await _modelPageLogic.GetModelPageData(id);
-        return details;
+        if (id >= 0)
+        {
+          return Ok(ModelMapper.Convert(await _modelPageLogic.GetModelPageData(id)));
+        }
+        else
+        {
+          return BadRequest("Invalid ModelId Data Requested.");
+        }
       }
       catch (Exception ex)
       {
         _logger.LogException(ex);
-        return new CarModelDetails();
+        return StatusCode(StatusCodes.Status500InternalServerError, ex);
       }
     }
+
 
     [HttpGet]
     [Route("api/price/{cityId}")]
-    public async Task<IEnumerable<CarPrice>> GetPriceByCityId(int cityId)
+    public async Task<IActionResult> GetPriceByCityId(int cityId)
     {
       try
       {
-        await _modelPageLogic.GetPriceListByCityId(cityId);
-        IEnumerable<CarPrice> details = await _modelPageLogic.GetPriceListByCityId(cityId);
-        return details;
+        if (cityId >= 0)
+        {
+          return Ok(ModelMapper.Convert(await _modelPageLogic.GetPriceListByCityId(cityId)));
+        }
+        else
+        {
+          return BadRequest("Invalid CityId Data Requested.");
+        }
       }
       catch (Exception ex)
       {
         _logger.LogException(ex);
-        return new List<CarPrice>();
+        return StatusCode(StatusCodes.Status500InternalServerError, ex);
       }
     }
 
-    [HttpGet]
-    [Route("/debug/{cityId}/{versionId}")]
-    public async Task Debug(int cityId, int versionId)
-    {
-      try
-      {
-        await _modelPageLogic.debug(cityId, versionId);
-        // await _modelPageLogic.GetPriceListByCityId(cityId);
-        // IEnumerable<CarPrice> details = await _modelPageLogic.GetPriceListByCityId(cityId);
-        // return details;
-      }
-      catch (Exception ex)
-      {
-        _logger.LogException(ex);
-        // return new List<CarPrice>();
-      }
-    }
   }
 }
 

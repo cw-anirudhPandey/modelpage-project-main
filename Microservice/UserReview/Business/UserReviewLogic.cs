@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AEPLCore.Cache.Interfaces;
-using UserReview.DataAccess;
+using UserReview.Business.Interfaces;
+using UserReview.DataAccess.Interfaces;
 using UserReview.Entities;
 
 namespace UserReview.Business

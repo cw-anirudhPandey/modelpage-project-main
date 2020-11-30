@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 export const handleChange = (props, selectedText, changeToolTipStatus) => {
   if (props.type === "City") {
     props.changeSelectedCity(selectedText);
@@ -32,11 +31,30 @@ const cityApiCall = async (cityId, props) => {
   }
 }
 
+export const isDataObjectEmpty = (data) => {
+  return (Object.keys(data).length === 0 && data.constructor === Object);
+}  
+
 export const formatPrice = (price) => {
   if(price && price.length === 0)
     return "";
   else if(price && price.length >= 3) {
-    // let priceStr = "";
     return price.slice(0, 1) + "." + price.slice(1, 3); 
   }
 }
+
+export const modelDetailsApiCall = async (modelId, setData, setShowContent, setMessage) => {
+  try {
+    const response = await axios.get(
+      "http://localhost:5000/api/model/" + modelId
+    )
+    if(response.data) {
+      setData(response.data);
+    }
+  } catch (error) {
+    setShowContent(false);
+    setMessage("Some problem occured " + error);
+  }
+}
+
+

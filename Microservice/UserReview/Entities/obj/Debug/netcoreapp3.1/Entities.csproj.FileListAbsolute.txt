@@ -6,3 +6,4 @@ D:\modelpage-project-main\Microservice\UserReview\Entities\obj\Debug\netcoreapp3
 D:\modelpage-project-main\Microservice\UserReview\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
 D:\modelpage-project-main\Microservice\UserReview\Entities\obj\Debug\netcoreapp3.1\Entities.dll
 D:\modelpage-project-main\Microservice\UserReview\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
+d:\modelpage-project-main\Microservice\UserReview\Entities\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MMV.Entities;
 
-namespace DataAccess.Interfaces
+namespace MMV.DataAccess.Interfaces
 {
   public interface ICarModelRepository
   {

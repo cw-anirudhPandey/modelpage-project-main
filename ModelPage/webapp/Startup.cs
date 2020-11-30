@@ -33,9 +33,7 @@ namespace webapp
       string consulHost = Environment.GetEnvironmentVariable("CONSUL_HOST") ?? "10.10.20.113";
       services.AddControllers();
       services.AddAutoMapper(typeof(Startup));
-
       services.AddLogging();
-      Console.WriteLine(consulHost + "-------------------------" + Configuration["AppSettings:ModuleName"]);
       services.AddLogUpdater(consulHost + ":8500", Configuration["AppSettings:ModuleName"]);
       services.AddSingleton<IModelPageRepository, ModelPageRepository>();
       services.AddSingleton<IUserReviewRepository, UserReviewRepository>();

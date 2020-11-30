@@ -13,7 +13,6 @@ namespace ModelPage.DTO
     [JsonProperty("cost")]
     public string Cost { get; set; }
 
-
     [JsonProperty("duration")]
     public string Duration { get; set; }
   }

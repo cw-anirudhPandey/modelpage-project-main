@@ -5,22 +5,25 @@ namespace ModelPage.DTO
 {
   public class CarDetailsDTO
   {
-    [JsonProperty("carMake")]
+    [JsonProperty("makeDetail")]
     public MakeDTO CarMake { get; set; }
 
-    [JsonProperty("modelName")]
+    [JsonProperty("modelDetail")]
     public ModelDTO CarModel { get; set; }
 
-    [JsonProperty("carImage")]
+    [JsonProperty("imageDetail")]
     public ImageDTO CarImage { get; set; }
 
-    [JsonProperty("carReview")]
+    [JsonProperty("reviewDetail")]
     public ReviewDTO CarReview { get; set; }
+    
+    [JsonProperty("priceDetailList")]
+    public IEnumerable<CarCityDTO> CitySet { get; set; }
 
-    [JsonProperty("carEmi")]
-    public EmiDTO CarEmi { get; set; }
+    [JsonProperty("priceDetailList")]
+    public IEnumerable<CarVersionDTO> VersionSet { get; set; }
 
-    [JsonProperty("carPriceDetails")]
-    public IEnumerable<PriceDetailsDTO> CarPriceDetails { get; set; }
+    [JsonProperty("priceDetailList")]
+    public List<PriceDetailsDTO> CarPriceDetails { get; set; }
   }
 }

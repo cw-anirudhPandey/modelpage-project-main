@@ -96,7 +96,7 @@ body {
 }
 
 .popup-box {
-  border: 0.2px #53535350 solid;
+  border: 0.3px #53535350 solid;
   position: fixed;
   background: #00000050;
   width: 100%;
@@ -160,6 +160,13 @@ body {
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */

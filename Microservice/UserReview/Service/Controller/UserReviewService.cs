@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 using UserReview.Business;
+using UserReview.Business.Interfaces;
 using UserReview.Service.ProtoClass;
 
 namespace UserReview.Service.Controller

@@ -1,4 +1,3 @@
-D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\DataAccess.exe
 D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\Business.deps.json
 D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\Business.dll
 D:\modelpage-project-main\ModelPage\Business\bin\Debug\netcoreapp3.1\Business.pdb

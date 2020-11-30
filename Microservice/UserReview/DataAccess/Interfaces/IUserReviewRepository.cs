@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UserReview.Entities;
 
-namespace UserReview.DataAccess
+namespace UserReview.DataAccess.Interfaces
 {
   public interface IUserReviewRepository
   {

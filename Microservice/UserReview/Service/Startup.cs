@@ -11,7 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using UserReview.Business;
+using UserReview.Business.Interfaces;
 using UserReview.DataAccess;
+using UserReview.DataAccess.Interfaces;
 using UserReview.Service.Controller;
 
 namespace Service

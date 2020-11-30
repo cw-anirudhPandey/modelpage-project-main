@@ -21,24 +21,19 @@ namespace MMV.DataAccess
     public async Task<Make> GetMake(int makeId)
     {
       Make makeDetails = new Make();
-      try
+
+      using (IDbConnection conn = new MySqlConnection(_config.GetConnectionString("modelPageDBString")))
       {
-        using (IDbConnection conn = new MySqlConnection(_config.GetConnectionString("modelPageDBString")))
-        {
-          string query = @"Select 
+        string query = @"Select 
                             carMakeId as Id, 
                             carMakeName as MakeName
                         From 
                             _carMake
                         Where 
                             carMakeId = @MakeId;";
-          makeDetails = (await conn.QueryAsync<Make>(query, new { MakeId = makeId })).FirstOrDefault();
-        }
+        makeDetails = (await conn.QueryAsync<Make>(query, new { MakeId = makeId })).FirstOrDefault();
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine(ex.Message + "GetMake method in DAL for makeId = " + makeId);
-      }
+
       return makeDetails;
     }
   }

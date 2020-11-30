@@ -29,16 +29,13 @@ namespace ModelPage.Business
 
     public async Task<CarModelDetails> GetModelPageData(int modelId)
     {
-      // int makeId = await _modelPageRepository.GetMakeIdByModelId(modelId);
       var carModel = await _mmvRepository.GetModel(modelId);
       var carMake = await _mmvRepository.GetMake(carModel.MakeId);
       IEnumerable<CarVersion> versionSet = await _mmvRepository.GetVersionList(modelId);
       CarVersion version = await _mmvRepository.GetDefaultVersionByModelId(modelId);
       var carImage = await _imageRepository.GetImage(modelId);
       var carReview = await _userReviewRepository.GetReviewDetails(modelId);
-      // var carEmi = await _modelPageRepository.GetEmiDetails(modelId);
       IEnumerable<CarCity> citySet = await _locationRepository.GetAllCities();
-
       List<CarPrice> priceOfVersionList = new List<CarPrice>();
       foreach(var item in versionSet) {
         var priceDetail = await _priceRepository.GetAvgPriceByVersionId(item.Id);

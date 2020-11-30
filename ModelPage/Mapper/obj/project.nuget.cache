@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "n9bVFmsdscuJC8c3ITYFI4TMYZCQaFdhUUTtBp3vqayubhimFk4lpiRcAnw3qD5bkKoz8VYqSBqcUDfvKBhwaQ==",
+  "success": true,
+  "projectFilePath": "D:\\modelpage-project-main\\ModelPage\\Mapper\\Mapper.csproj",
+  "expectedPackageFiles": [
+    "D:\\modelpage-project-main\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "D:\\modelpage-project-main\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "D:\\modelpage-project-main\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "D:\\modelpage-project-main\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
