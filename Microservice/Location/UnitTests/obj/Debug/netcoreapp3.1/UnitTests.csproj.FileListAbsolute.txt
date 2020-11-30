@@ -133,3 +133,10 @@ d:\modelpage-project-main\Microservice\Location\UnitTests\obj\Debug\netcoreapp3.
 d:\modelpage-project-main\Microservice\Location\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.dll
 d:\modelpage-project-main\Microservice\Location\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.pdb
 d:\modelpage-project-main\Microservice\Location\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.genruntimeconfig.cache
+d:\modelpage-project-main\Microservice\Location\UnitTests\bin\Debug\netcoreapp3.1\appsettings.Development.json
+d:\modelpage-project-main\Microservice\Location\UnitTests\bin\Debug\netcoreapp3.1\appsettings.json
+d:\modelpage-project-main\Microservice\Location\UnitTests\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+d:\modelpage-project-main\Microservice\Location\UnitTests\bin\Debug\netcoreapp3.1\Service.exe
+d:\modelpage-project-main\Microservice\Location\UnitTests\bin\Debug\netcoreapp3.1\Service.dll
+d:\modelpage-project-main\Microservice\Location\UnitTests\bin\Debug\netcoreapp3.1\Grpc.AspNetCore.Server.dll
+d:\modelpage-project-main\Microservice\Location\UnitTests\bin\Debug\netcoreapp3.1\Service.pdb

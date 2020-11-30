@@ -50,7 +50,7 @@ namespace Price.Service.Controller
         result.Id = price.Id;
         result.VersionId = price.VersionId;
         result.CityId = price.CityId;
-        result.Value = price.Value;
+        result.Value = price.Value ?? "";
       }
       return result;
     }
@@ -61,7 +61,7 @@ namespace Price.Service.Controller
       var details = await _priceLogic.GetAvgPriceByVersionId(request.Value);
       if (details != null)
       {
-        result.Value = details.Value;
+        result.Value = details.Value ?? "";
       }
       return result;
     }

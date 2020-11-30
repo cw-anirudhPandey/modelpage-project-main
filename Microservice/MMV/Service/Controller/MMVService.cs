@@ -30,7 +30,7 @@ namespace MMV.Service.Controller
       var makeDetails = await _carMakeLogic.GetMake(request.Value);
       if(makeDetails != null) {
         result.Id = makeDetails.Id;
-        result.Name = makeDetails.MakeName;
+        result.Name = makeDetails.MakeName ?? "";
       }
       return result;
     }
@@ -43,7 +43,7 @@ namespace MMV.Service.Controller
       {
         result.Id = modelDetails.Id;
         result.MakeId = modelDetails.MakeId;
-        result.Name = modelDetails.ModelName;
+        result.Name = modelDetails.ModelName ?? "";
       }
       return result;
     }
@@ -64,7 +64,7 @@ namespace MMV.Service.Controller
         {
           Id = versionItem.Id,
           ModelId = versionItem.ModelId,
-          Name = versionItem.Name
+          Name = versionItem.Name ?? ""
         });
       }
       return versionListProto;

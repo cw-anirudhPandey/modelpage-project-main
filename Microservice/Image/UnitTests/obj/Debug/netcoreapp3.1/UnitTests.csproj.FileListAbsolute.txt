@@ -1,3 +1,7 @@
+d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\appsettings.Development.json
+d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\appsettings.json
+d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\Service.exe
 d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\testhost.exe
 d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\testhost.dll
 d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
@@ -122,9 +126,12 @@ d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\r
 d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\Business.dll
 d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\DataAccess.dll
 d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\Entities.dll
+d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\Service.dll
+d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\Grpc.AspNetCore.Server.dll
 d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\Business.pdb
 d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\DataAccess.pdb
 d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\Entities.pdb
+d:\modelpage-project-main\Microservice\Image\UnitTests\bin\Debug\netcoreapp3.1\Service.pdb
 d:\modelpage-project-main\Microservice\Image\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.csprojAssemblyReference.cache
 d:\modelpage-project-main\Microservice\Image\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.AssemblyInfoInputs.cache
 d:\modelpage-project-main\Microservice\Image\UnitTests\obj\Debug\netcoreapp3.1\UnitTests.AssemblyInfo.cs

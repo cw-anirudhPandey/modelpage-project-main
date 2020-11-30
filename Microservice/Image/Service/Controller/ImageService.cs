@@ -27,7 +27,7 @@ namespace Image.Service.Controller
       {
         result.Id = imageDetails.Id;
         result.ModelId = imageDetails.ModelId;
-        result.ImageUrl = imageDetails.ImageUrl;
+        result.ImageUrl = imageDetails.ImageUrl ?? "";
       }
       return result;
     }

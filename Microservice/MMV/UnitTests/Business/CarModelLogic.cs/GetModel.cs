@@ -9,7 +9,6 @@ namespace UnitTests.Business.CarModelLogic
 {
   public class GetModel : Base
   {
-
     private Model GetMockModel()
     {
       return new Model()
