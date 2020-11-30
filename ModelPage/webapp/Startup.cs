@@ -35,7 +35,6 @@ namespace webapp
       services.AddAutoMapper(typeof(Startup));
       services.AddLogging();
       services.AddLogUpdater(consulHost + ":8500", Configuration["AppSettings:ModuleName"]);
-      services.AddSingleton<IModelPageRepository, ModelPageRepository>();
       services.AddSingleton<IUserReviewRepository, UserReviewRepository>();
       services.AddSingleton<IMMVRepository, MMVRepository>();
       services.AddSingleton<IImageRepository, ImageRepository>();

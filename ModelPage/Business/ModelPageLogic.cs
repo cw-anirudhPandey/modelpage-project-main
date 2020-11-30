@@ -9,17 +9,15 @@ namespace ModelPage.Business
 {
   public class ModelPageLogic : IModelPageLogic
   {
-    private readonly IModelPageRepository _modelPageRepository;
     private readonly IUserReviewRepository _userReviewRepository;
     private readonly IMMVRepository _mmvRepository;
     private readonly IImageRepository _imageRepository;
     private readonly IPriceRepository _priceRepository;
     private readonly ILocationRepository _locationRepository;
-    public ModelPageLogic(IModelPageRepository modelPageRepository, IUserReviewRepository userReviewRepository,
+    public ModelPageLogic(IUserReviewRepository userReviewRepository,
           IMMVRepository mmvRepository, IImageRepository imageRepository, IPriceRepository priceRepository,
           ILocationRepository locationRepository)
     {
-      _modelPageRepository = modelPageRepository;
       _userReviewRepository = userReviewRepository;
       _mmvRepository = mmvRepository;
       _imageRepository = imageRepository;
@@ -37,12 +35,12 @@ namespace ModelPage.Business
       var carReview = await _userReviewRepository.GetReviewDetails(modelId);
       IEnumerable<CarCity> citySet = await _locationRepository.GetAllCities();
       List<CarPrice> priceOfVersionList = new List<CarPrice>();
-      foreach(var item in versionSet) {
+      foreach (var item in versionSet)
+      {
         var priceDetail = await _priceRepository.GetAvgPriceByVersionId(item.Id);
         priceDetail.VersionId = item.Id;
         priceOfVersionList.Add(priceDetail);
       }
-      // CarPrice price = await _priceRepository.GetAvgPriceByVersionId(version.Id);
       CarModelDetails result = new CarModelDetails()
       {
         MakeDetail = carMake,
@@ -59,26 +57,6 @@ namespace ModelPage.Business
     public async Task<IEnumerable<CarPrice>> GetPriceListByCityId(int cityId)
     {
       return await _priceRepository.GetPriceListByCityId(cityId);
-    }
-
-    public async Task debug(int cityId, int versionId) {
-      // var details = await _userReviewRepository.GetReviewDetails(4);
-      // var details1 = await _mmvRepository.GetMake(1);
-      // var details2 = await _mmvRepository.GetModel(4);
-      // var details3 = await _mmvRepository.GetVersionList(1);
-      // var details4 = await _mmvRepository.GetDefaultVersionByModelId(2);
-      // var details4 = await _imageRepository.GetImage(2);
-      // var details4 = await _priceRepository.GetPriceByCityVersion(cityId, versionId);------
-      // var details5 = await _priceRepository.GetPriceListByCityId(2);
-      // var details6 = await _locationRepository.GetAllCities();
-      List<CarPrice> priceOfVersionList = new List<CarPrice>();
-      IEnumerable<CarVersion> versionSet = await _mmvRepository.GetVersionList(4);
-      foreach(var item in versionSet) {
-        var priceDetail = await _priceRepository.GetAvgPriceByVersionId(item.Id);
-        priceDetail.VersionId = item.Id;
-        priceOfVersionList.Add(priceDetail);
-      }
-      // return priceOfVersionList;
     }
   }
 }
