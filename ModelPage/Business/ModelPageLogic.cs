@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ModelPage.Business.Interfaces;
 using ModelPage.DataAccess.Interfaces;
-using ModelPage.DTO;
 using ModelPage.Entities;
 
 namespace ModelPage.Business

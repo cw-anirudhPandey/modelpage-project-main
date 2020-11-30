@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using ModelPage.DTO;
 using ModelPage.Entities;
 
-namespace ModelPage.Business
+namespace ModelPage.Business.Interfaces
 {
   public interface IModelPageLogic
   {
